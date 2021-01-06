@@ -13,6 +13,17 @@ interface FormProps {
 }
 
 const Form = ({userName, mood, genre, decade, getMoodyTunes}: FormProps) => {
+
+  // const handleClick = () => {
+  //   event.preventDefault();
+  //   getMoodyTunes();
+  // }
+
+  const handleClick = (event: MouseEvent) => {
+    event.preventDefault()
+    getMoodyTunes();
+  }
+
   return (
     <div>
       This is the form component
@@ -37,11 +48,11 @@ const Form = ({userName, mood, genre, decade, getMoodyTunes}: FormProps) => {
         <input type="radio" id="70" name="decade" value="70"/>
         <label htmlFor="70">70's</label><br/>
         <input type="radio" id="80" name="decade" value="80"/>
-        <label htmlFor="80">80</label><br/>
+        <label htmlFor="80">80's</label><br/>
         <input type="radio" id="90" name="decade" value="90"/>
-        <label htmlFor="90">90</label>
+        <label htmlFor="90">90's</label>
         <br/>
-        <input type="submit" value="Submit"/>
+        <button type='submit' onClick={ (event: React.MouseEvent<HTMLElement>) => handleClick(event as any) }>Get Songs</button>
       </form>
     </div>
    );

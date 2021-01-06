@@ -1,25 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import Form from "../Form/Form";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import { getTracksByMoodAPI } from "../../utilities/apiCalls";
 
 function App() {
-  type MoodObject = {
-    valence: number;
-    arousal: number;
-  };
+  const [userName, setUserName] = useState('');
+  const [mood, setMood] = useState('');
+  const [genre, setGenre] = useState([]);
+  const [decade, setDecade] = useState([]);
 
   const getMoodyTunes = () => {
     console.log("clicked!");
-    getTracksByMoodAPI();
+    // getTracksByMoodAPI();
   };
 
   return (
     <div className="App-header">
       This is the App parent component
-      <Form />
-      <button onClick={getMoodyTunes}>console log API call</button>
+      <Form
+        userName={userName}
+        mood={mood}
+        genre={genre}
+        decade={decade}
+        getMoodyTunes={getMoodyTunes}
+      />
     </div>
   );
 }

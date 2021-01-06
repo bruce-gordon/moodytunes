@@ -6,9 +6,7 @@ import { getTracksByMoodAPI } from "../../utilities/apiCalls";
 
 function App() {
   const [userName, setUserName] = useState('');
-  const [mood, setMood] = useState('');
-  const [genre, setGenre] = useState([]);
-  const [decade, setDecade] = useState([]);
+
 
   const getMoodyTunes = () => {
     console.log("clicked!");
@@ -19,10 +17,6 @@ function App() {
     <div className="App-header">
       This is the App parent component
       <Form
-        userName={userName}
-        mood={mood}
-        genre={genre}
-        decade={decade}
         getMoodyTunes={getMoodyTunes}
       />
     </div>

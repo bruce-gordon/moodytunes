@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // export interface FormProps {
 //
@@ -47,7 +48,7 @@ const Form = ({ getMoodyTunes }: FormProps) => {
         <input onChange={ event => setDecade('date90')} type="radio" id="90" name="decade" value="90"/>
         <label htmlFor="90">90's</label>
         <br/>
-        <button type='submit' onClick={ (event: React.MouseEvent<HTMLElement>) => handleClick(event as any) }>Get Songs</button>
+        <button onClick={ (event: React.MouseEvent<HTMLElement>) => handleClick(event as any) }><Link to='/results'>Get Songs</Link></button>
       </form>
     </div>
    );

@@ -8,9 +8,17 @@ interface ResultProps {
     title: string;
     releaseDate: string;
     genre: string;
+    addFavorite: Function;
 };
 
-const Result = ({ key, id, artist, title, releaseDate, genre }: ResultProps) => {
+
+const Result = ({ key, id, artist, title, releaseDate, genre, addFavorite }: ResultProps) => {
+    
+    const handleClick = () => {
+      console.log('handleclick')
+      addFavorite(id)
+    }
+    
     return (
         <article className="song" id={id}>
             <div className="song-details">
@@ -19,7 +27,7 @@ const Result = ({ key, id, artist, title, releaseDate, genre }: ResultProps) => 
                     <h1>{title}</h1>
                     <h3>{artist}</h3>
                 </div>
-                <button className="favoriteBtn">⭐</button>
+                <button onClick={() => handleClick()} className="favoriteBtn">⭐</button>
             </div>
             <div className="date-genre">
                 <p><b>Release Date:</b> {releaseDate}</p>

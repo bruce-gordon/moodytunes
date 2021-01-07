@@ -4,10 +4,12 @@ import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import { getTracksByMoodAPI } from "../../utilities/apiCalls";
 import ResultsView from "../ResultsView/ResultsView";
+import FavoritesView from '../FavoritesView/FavoritesView'
 
 function App() {
   const [userName, setUserName] = useState("");
   const [songResults, setSongResults] = useState([]);
+  const [favoriteSongs, setFavoriteSongs] = useState([]);
 
   const getMoodyTunes = async (mood: string, genre: string, decade: string) => {
     console.log("clicked!");
@@ -40,8 +42,15 @@ function App() {
     );
   };
 
+  const addFavorite: Function = (id: string) => {
+    console.log(songResults)
+ 
+    songResults.find(song => song.id === id)
+  }
+
   return (
     <div className="App-header">
+      <FavoritesView addFavorite={addFavorite} favoriteSongs={favoriteSongs}/>
       <Switch>
         <Route
           path='/results'

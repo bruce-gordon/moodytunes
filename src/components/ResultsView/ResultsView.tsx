@@ -8,7 +8,8 @@ interface ResultsViewProps {
     artist_display_name: string, 
     title: string, 
     releasedate: string, 
-    genre: string }[];
+    genre: string,
+    addFavorite: Function }[];
 }
 const ResultsView = ({ songResults }: ResultsViewProps) => {
    const songs = songResults.map((song) => {
@@ -20,6 +21,7 @@ const ResultsView = ({ songResults }: ResultsViewProps) => {
         title={song.title}
         releaseDate={song.releasedate}
         genre={song.genre}
+        addFavorite={addFavorite}
        />
      );
    });

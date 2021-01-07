@@ -8,14 +8,16 @@ function App() {
   const [userName, setUserName] = useState('');
 
 
-  const getMoodyTunes = () => {
+  const getMoodyTunes = (mood: string, decade: string) => {
     console.log("clicked!");
-    // getTracksByMoodAPI();
+    const arousal: string = mood.split(',')[0];
+    const valence: string = mood.split(',')[1];
+    getTracksByMoodAPI(valence, arousal, decade);
   };
 
   return (
     <div className="App-header">
-      This is the App parent component
+      Generate a list of songs that fit you're mood.
       <Form
         getMoodyTunes={getMoodyTunes}
       />

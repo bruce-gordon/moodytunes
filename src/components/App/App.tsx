@@ -6,13 +6,13 @@ import { getTracksByMoodAPI } from "../../utilities/apiCalls";
 
 function App() {
   const [userName, setUserName] = useState('');
+  const [songResults, setSongResults] = useState('')
 
-
-  const getMoodyTunes = (mood: string, decade: string) => {
+  const getMoodyTunes = async(mood: string, decade: string) => {
     console.log("clicked!");
     const arousal: string = mood.split(',')[0];
     const valence: string = mood.split(',')[1];
-    getTracksByMoodAPI(valence, arousal, decade);
+    setSongResults(await getTracksByMoodAPI(valence, arousal, decade));
   };
 
   return (

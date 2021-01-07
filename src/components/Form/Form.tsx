@@ -8,6 +8,7 @@ interface FormProps {
   getMoodyTunes: Function;
 }
 
+
 const Form = ({ getMoodyTunes }: FormProps) => {
   const [mood, setMood] = useState('');
   const [genre, setGenre] = useState('');
@@ -15,19 +16,19 @@ const Form = ({ getMoodyTunes }: FormProps) => {
 
   const handleClick = (event: MouseEvent) => {
     event.preventDefault()
-    getMoodyTunes(mood, decade);
+    getMoodyTunes(mood, genre, decade);
   }
 
   return (
     <div>
-      This is the form component
+      Generate a list of songs that fit you're mood.
       <form action="/action_page.php">
         <p>Please select your Mood:</p>
         <input onChange={ event => setMood('660000,950000') } type="radio" id="happy" name="mood" value="happy"/>
         <label htmlFor="happy">Happy</label><br/>
-        <input onChange={ event => setMood( '[235000, 91000]') }type="radio" id="sad" name="mood" value="sad"/>
+        <input onChange={ event => setMood( '235000,91000') } type="radio" id="sad" name="mood" value="sad"/>
         <label htmlFor="sad">Sad</label><br/>
-        <input onChange={ event => setMood('[895000, 295000]')} type="radio" id="angry" name="mood" value="angry"/>
+        <input onChange={ event => setMood('895000,295000') } type="radio" id="angry" name="mood" value="angry"/>
         <label htmlFor="angry">Angry</label>
 
         <p>Please select a Genre:</p>

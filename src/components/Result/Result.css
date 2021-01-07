@@ -1,0 +1,59 @@
+.container-title {
+    margin: 1em;
+    align-self: center;
+}
+
+.song {
+    border-radius: 25px;
+    padding: 1vw;
+    box-shadow: 0px 4px 10px 0px bisque;
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 1em;
+    width: 70vw;
+    /* justify-content: center; */
+    height: 13vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* .song:hover {
+    cursor: pointer;
+    transform: scale(1.025);
+    z-index: 0;
+} */
+
+.song-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.title-artist {
+    display: flex;
+    flex-direction: column;
+}
+h1 {
+    margin: 0;
+}
+
+h3 {
+    margin: 0;
+    font-size: .6em;
+   
+}
+
+.song-details button {
+    width: 5vw;
+    height: 5vh;
+    background: none;
+    border: none;
+
+}
+
+.date-genre {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: .5em
+}

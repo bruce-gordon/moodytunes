@@ -10,4 +10,4 @@ react_dom_1["default"].render(<react_router_dom_1.BrowserRouter><index_1["defaul
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals_1["default"]();
+reportWebVitals_1["default"](); 

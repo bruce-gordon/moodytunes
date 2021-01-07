@@ -14,12 +14,12 @@ const Result = ({ key, id, artist, title, releaseDate, genre }: ResultProps) => 
     return (
         <article className="song" id={id}>
             <div className="song-details">
-                <button className="moodBtn">+</button>
+                <button className="moodBtn">➕</button>
                 <div className="title-artist">
                     <h1>{title}</h1>
                     <h3>{artist}</h3>
                 </div>
-                <button className="favoriteBtn">*</button>
+                <button className="favoriteBtn">⭐</button>
             </div>
             <div className="date-genre">
                 <p><b>Release Date:</b> {releaseDate}</p>

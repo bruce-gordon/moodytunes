@@ -16,12 +16,12 @@ const Form = ({ getMoodyTunes }: FormProps) => {
 
   const handleClick = (event: MouseEvent) => {
     event.preventDefault()
-    getMoodyTunes(mood, decade);
+    getMoodyTunes(mood, genre, decade);
   }
 
   return (
     <div>
-      This is the form component
+      Generate a list of songs that fit you're mood.
       <form action="/action_page.php">
         <p>Please select your Mood:</p>
         <input onChange={ event => setMood('660000,950000') } type="radio" id="happy" name="mood" value="happy"/>

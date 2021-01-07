@@ -1,5 +1,6 @@
 .container-title {
     margin: 1em;
+    align-self: center;
 }
 
 .song {
@@ -9,9 +10,12 @@
     transition: all 0.2s ease-in-out;
     margin-bottom: 1em;
     width: 70vw;
-    justify-content: center;
+    /* justify-content: center; */
+    height: 13vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-
 /* .song:hover {
     cursor: pointer;
     transform: scale(1.025);
@@ -39,9 +43,12 @@ h3 {
    
 }
 
-button {
-    width: 2vw;
-    height: 3vh
+.song-details button {
+    width: 5vw;
+    height: 5vh;
+    background: none;
+    border: none;
+
 }
 
 .date-genre {

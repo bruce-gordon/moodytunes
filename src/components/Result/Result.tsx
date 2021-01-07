@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './Result.css';
 
 interface ResultProps {
     key: string;
@@ -11,12 +12,15 @@ interface ResultProps {
 
 const Result = ({ key, id, artist, title, releaseDate, genre }: ResultProps) => {
     return (
-        <article className="song" id={id} style={{ border:'solid 3px' }}>
+        <article className="song" id={id}>
             <button>+</button>
-            <h1>{artist} - {title}</h1>
-            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-                <p>Release Date: {releaseDate}</p>
-                <p>Genre: {genre}</p>
+            <div className="title-artist">
+            <h1>{title}</h1>
+            <h3>{artist}</h3>
+            </div>
+            <div className="song-details">
+                <p><b>Release Date:</b> {releaseDate}</p>
+                <p><b>Genre:</b> {genre}</p>
             </div>
             
         </article>

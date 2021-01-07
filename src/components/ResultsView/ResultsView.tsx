@@ -24,7 +24,7 @@ const ResultsView = ({ songResults }: ResultsViewProps) => {
      );
    });
    return <section className="songList">
-       <h1>MoodyTunes Results</h1>
+       <h1 className="container-title">MoodyTunes Results</h1>
        {songs}
        </section>;
 }

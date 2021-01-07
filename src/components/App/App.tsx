@@ -3,10 +3,11 @@ import Form from "../Form/Form";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import { getTracksByMoodAPI } from "../../utilities/apiCalls";
+import ResultsView from '../ResultsView/ResultsView';
 
 function App() {
   const [userName, setUserName] = useState('');
-  const [songResults, setSongResults] = useState('')
+  const [songResults, setSongResults] = useState([]);
 
   const getMoodyTunes = async(mood: string, decade: string) => {
     console.log("clicked!");
@@ -20,6 +21,9 @@ function App() {
       Generate a list of songs that fit you're mood.
       <Form
         getMoodyTunes={getMoodyTunes}
+      />
+      <ResultsView 
+        songResults={songResults} 
       />
     </div>
   );

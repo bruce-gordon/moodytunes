@@ -8,6 +8,7 @@ interface FormProps {
   getMoodyTunes: Function;
 }
 
+
 const Form = ({ getMoodyTunes }: FormProps) => {
   const [mood, setMood] = useState('');
   const [genre, setGenre] = useState('');

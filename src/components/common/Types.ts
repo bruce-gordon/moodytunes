@@ -46,6 +46,7 @@ export interface FavoriteProps {
   title: string;
   releaseDate: string;
   genre: string;
+  removeFavorite: Function;
 };
 
 export interface ResultsViewProps {

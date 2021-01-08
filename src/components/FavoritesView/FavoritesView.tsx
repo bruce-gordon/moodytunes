@@ -11,9 +11,10 @@ interface FavoritesViewProps {
     releasedate: string,
     genre: string
   }[];
+  removeFavorite: Function;
 }
 
-const FavoritesView = ({favoriteSongs}: FavoritesViewProps) => {
+const FavoritesView = ({favoriteSongs, removeFavorite}: FavoritesViewProps) => {
   const favorites = favoriteSongs.map(fav => {
     return (
       <Favorite
@@ -23,6 +24,7 @@ const FavoritesView = ({favoriteSongs}: FavoritesViewProps) => {
         title={fav.title}
         releaseDate={fav.releasedate}
         genre={fav.genre}
+        removeFavorite={removeFavorite}
       />
     );
   });

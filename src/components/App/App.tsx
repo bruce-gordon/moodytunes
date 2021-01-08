@@ -28,6 +28,11 @@ function App() {
     setFavoriteSongs([favorite, ...favoriteSongs]) // putting these params inside an array (error expected 1 arg but got 2+)
   }
 
+  const removeFavorite = (id: string) => {
+    const favorites = songResults.filter((song:ISongResults) => song.id !== id) as any;
+    setFavoriteSongs([favorites])
+  }
+
   return (
     <div className="App">
       <header className='app-header'>
@@ -46,6 +51,7 @@ function App() {
         <Route
           path='/favorites'
           render={props => (<FavoritesView
+            removeFavorite={removeFavorite}
             favoriteSongs={favoriteSongs} {...props}
             />)}
         />

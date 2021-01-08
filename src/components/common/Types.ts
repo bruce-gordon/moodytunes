@@ -18,10 +18,10 @@ export const allGenres: string[] = [
 ];
 
 export interface ISongResults {
-  id: string, 
-  artist_display_name: string, 
-  title: string, 
-  releasedate: string, 
+  id: string,
+  artist_display_name: string,
+  title: string,
+  releasedate: string,
   genre: string
 }
 
@@ -37,6 +37,15 @@ export interface ResultProps {
   releaseDate: string;
   genre: string;
   addFavorite: Function;
+};
+
+export interface FavoriteProps {
+  key: string;
+  id: string;
+  artist: string;
+  title: string;
+  releaseDate: string;
+  genre: string;
 };
 
 export interface ResultsViewProps {

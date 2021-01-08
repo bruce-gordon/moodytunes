@@ -1,3 +1,5 @@
+
+
 .container-title {
     margin: 1em;
     align-self: center;
@@ -26,7 +28,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
 }
 
 .title-artist {
@@ -40,7 +42,6 @@ h1 {
 h3 {
     margin: 0;
     font-size: .6em;
-   
 }
 
 .song-details button {
@@ -48,7 +49,13 @@ h3 {
     height: 5vh;
     background: none;
     border: none;
-
+}
+.favoriteBtn{
+  font-size: 2vw;
+}
+.favoriteBtn:hover{
+  cursor: pointer;
+  font-size: 2.5vw;
 }
 
 .date-genre {

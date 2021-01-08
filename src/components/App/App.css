@@ -7,7 +7,7 @@
   align-items: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  width: 100%;
+  width: auto;
 }
 
 nav {
@@ -45,7 +45,7 @@ nav {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  padding: 2vw;
+  padding: 2vw 0;
   border-bottom: 2px solid white;
   background-color: #7797F1;
 }

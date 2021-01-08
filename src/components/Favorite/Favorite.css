@@ -1,10 +1,18 @@
-* {
-  border: 1px solid white;
-}
 
 .remove-fav-btn {
+  color: #282c34;
+  background: white;
+  height: 4vh;
+  border-radius: 5px;
+  border: 2px solid #282c34;
+  margin-right: 2vw;
+  font-weight: bolder;
+}
+
+.remove-fav-btn:hover {
   color: white;
-  font-size: ;
+  background: #282c34;
+  border: 2px solid white;
 }
 
 .favorite {
@@ -14,7 +22,6 @@
   transition: all 0.2s ease-in-out;
   margin-bottom: 1em;
   width: 70vw;
-  /* justify-content: center; */
   height: 13vh;
   display: flex;
   flex-direction: column;

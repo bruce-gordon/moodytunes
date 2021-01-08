@@ -1,5 +1,6 @@
 import React from 'react';
 import Favorite from '../Favorite/Favorite';
+import './FavoritesView.css';
 
 interface FavoritesViewProps {
   favoriteSongs:

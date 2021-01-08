@@ -1,9 +1,10 @@
 import React from 'react';
 import { FavoriteProps } from '../common/Types';
+import './Favorite.css';
 
 const Favorite = ({id, artist, title, releaseDate, genre}: FavoriteProps) => {
   return (
-    <article className='.song-result' id={id}>
+    <article className='favorite' id={id}>
       <div className="fav-details">
         <div className="title-artist">
           <h1>{title}</h1>

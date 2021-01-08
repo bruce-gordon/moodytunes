@@ -7,6 +7,7 @@
   align-items: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  width: 100%;
 }
 
 nav {
@@ -18,23 +19,32 @@ nav {
 }
 
 .nav-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 4vh;
   width: 45%;
-  background: #282c34;
+  background: white;
   border: 1px solid white;
 }
 
 .nav-btn-link {
-  color: white;
+  color: #7797F1;
   font-size: 2vh;
+  font-weight: bolder;
   text-decoration: none;
+}
+
+.nav-btn:hover {
+  background: #282c34;
+  color: #7797F1;
 }
 
 .app-header {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  padding: 2.5vw;
+  padding: 2vw;
   border-bottom: 2px solid white;
   background-color: #7797F1;
 }

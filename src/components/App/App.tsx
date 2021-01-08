@@ -33,12 +33,13 @@ function App() {
       <header className='app-header'>
         <h1 className='app-name'>MoodyTunes</h1>
         <nav>
-          <div className='nav-btn'>
-          <Link to='/' className='nav-btn-link'>Home</Link>
-          </div>
-          <div className='nav-btn'>
-          <Link to='/favorites' className='nav-btn-link'>Go to Favorites</Link>
-          </div>
+          <Link to='/' className='nav-btn-link'>
+            <div className='nav-btn'>Home</div>
+          </Link>
+          <Link to='/favorites' className='nav-btn-link'>
+            <div className='nav-btn'>Go to Favorites</div>
+          </Link>
+
         </nav>
       </header>
       <Switch>

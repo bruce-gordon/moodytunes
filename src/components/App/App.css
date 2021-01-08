@@ -23,13 +23,14 @@ nav {
   justify-content: center;
   align-items: center;
   height: 4vh;
-  width: 45%;
+  width: 100%;
   background: white;
   border: 1px solid white;
 }
 
 .nav-btn-link {
   color: #7797F1;
+  width: 45%;
   font-size: 2vh;
   font-weight: bolder;
   text-decoration: none;

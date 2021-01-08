@@ -1,32 +1,27 @@
-import React from 'react';
-import Result from '../Result/Result'
+import React from "react";
+import Result from "../Result/Result";
+import {ResultsViewProps} from '../common/Types'
 
-
-interface ResultsViewProps {
-  songResults: {
-    id: string, 
-    artist_display_name: string, 
-    title: string, 
-    releasedate: string, 
-    genre: string }[];
-}
-const ResultsView = ({ songResults }: ResultsViewProps) => {
-   const songs = songResults.map((song) => {
-     return (
-       <Result
-        key={song.id} 
+const ResultsView = ({ addFavorite, songResults }: ResultsViewProps) => {
+  const songs = songResults.map(song => {
+    return (
+      <Result
+        key={song.id}
         id={song.id}
         artist={song.artist_display_name}
         title={song.title}
         releaseDate={song.releasedate}
         genre={song.genre}
-       />
-     );
-   });
-   return <section className="songList">
-       <h1 className="container-title">MoodyTunes Results</h1>
-       {songs}
-       </section>;
-}
+        addFavorite={addFavorite}
+      />
+    );
+  });
+  return (
+    <section className="songList">
+      <h1 className="container-title">MoodyTunes Results</h1>
+      {songs}
+    </section>
+  );
+};
 
 export default ResultsView;

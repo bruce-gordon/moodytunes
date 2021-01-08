@@ -12,19 +12,19 @@ function App() {
   const [songResults, setSongResults] = useState([]);
   const [favoriteSongs, setFavoriteSongs] = useState<ISongResults[]>([]); // type the return for setFavoriteSongs for the error: Type 'undefined' is not assignable to type 'never'.ts(2322)
 
-  const getMoodyTunes = async (mood: string, genre: string, decade: string) => {
+  const getMoodyTunes = async (mood: string, decade: string) => {
     const arousal: string = mood.split(",")[0];
     const valence: string = mood.split(",")[1];
-    const excludedGenres: string = allGenres
-      .filter(musicGenre => genre !== musicGenre)
-      .join(",");
-    const results = await getTracksByMoodAPI(valence, arousal, excludedGenres, decade)
+    // const excludedGenres: string = allGenres
+    //   .filter(musicGenre => genre !== musicGenre)
+    //   .join(",");
+    const results = await getTracksByMoodAPI(valence, arousal, decade)
     setSongResults(results);
   };
 
   const addFavorite: Function = (id: string) => {
     type AnyType = any;
-    const favorite: ISongResults = songResults.find((song:ISongResults) => song.id === id) as AnyType // favorite needs to be set to any???
+    const favorite = songResults.find((song:ISongResults) => song.id === id) as AnyType // favorite needs to be set to any???
     setFavoriteSongs([favorite, ...favoriteSongs]) // putting these params inside an array (error expected 1 arg but got 2+)
   }
 

@@ -4,13 +4,13 @@ import {FormProps} from '../common/Types'
 
 const Form = ({ getMoodyTunes }: FormProps) => {
   const [mood, setMood] = useState('');
-  const [genre, setGenre] = useState('');
+  // const [genre, setGenre] = useState('');
   const [decade, setDecade] = useState('');
 
   const handleClick = (event: MouseEvent) => {
     event.preventDefault()
-    console.log(mood, genre, decade)
-    getMoodyTunes(mood, genre, decade);
+    console.log(mood, decade)
+    getMoodyTunes(mood, decade);
   }
 
   return (
@@ -25,13 +25,6 @@ const Form = ({ getMoodyTunes }: FormProps) => {
         <input onChange={ event => setMood('895000,295000') } type="radio" id="angry" name="mood" value="angry"/>
         <label htmlFor="angry">Angry</label>
 
-        <p>Please select a Genre:</p>
-        <input onChange={ event => setGenre('rock')} type="radio" id="rock" name="genre" value="rock"/>
-        <label htmlFor="rock">Rock</label><br/>
-        <input onChange={ event => setGenre('hip hop')} type="radio" id="hip hop" name="genre" value="hip hop"/>
-        <label htmlFor="hip hop">Hip Hop</label><br/>
-        <input onChange={ event => setGenre('folk')} type="radio" id="folk" name="genre" value="folk"/>
-        <label htmlFor="folk">Folk</label>
 
         <p>Please select a Decade:</p>
         <input onChange={ event => setDecade('date70')} type="radio" id="70" name="decade" value="70"/>
@@ -47,4 +40,11 @@ const Form = ({ getMoodyTunes }: FormProps) => {
    );
 }
 
+// <p>Please select a Genre:</p>
+// <input onChange={ event => setGenre('rock')} type="radio" id="rock" name="genre" value="rock"/>
+// <label htmlFor="rock">Rock</label><br/>
+// <input onChange={ event => setGenre('hip hop')} type="radio" id="hip hop" name="genre" value="hip hop"/>
+// <label htmlFor="hip hop">Hip Hop</label><br/>
+// <input onChange={ event => setGenre('folk')} type="radio" id="folk" name="genre" value="folk"/>
+// <label htmlFor="folk">Folk</label>
 export default Form;

@@ -9,15 +9,38 @@
   color: white;
 }
 
+nav {
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: -10vw;
+}
+
+.nav-btn {
+  height: 4vh;
+  width: 45%;
+  background: #282c34;
+  border: 1px solid white;
+}
+
+.nav-btn-link {
+  color: white;
+  font-size: 2vh;
+  text-decoration: none;
+}
+
 .app-header {
   width: 100%;
   display: flex;
+  justify-content: space-around;
   padding: 2.5vw;
   border-bottom: 2px solid white;
+  background-color: #7797F1;
 }
 
 .app-name {
   font-size: 1.5em;
   font-style: italic;
-  margin-left: 2vw;
+  margin-left: -10vw;
 }

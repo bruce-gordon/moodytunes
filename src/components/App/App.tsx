@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Form from "../Form/Form";
 import "./App.css";
 import { Route, Switch, Link } from "react-router-dom";
@@ -32,9 +32,14 @@ function App() {
     <div className="App">
       <header className='app-header'>
         <h1 className='app-name'>MoodyTunes</h1>
-        <button>
-          <Link to='/favorites'>Go to Favorites</Link>
-        </button>
+        <nav>
+          <button className='nav-btn'>
+          <Link to='/' className='nav-btn-link'>Home</Link>
+          </button>
+          <button className='nav-btn'>
+          <Link to='/favorites' className='nav-btn-link'>Go to Favorites</Link>
+          </button>
+        </nav>
       </header>
       <Switch>
         <Route

@@ -3,13 +3,13 @@ import { FavoriteProps } from '../common/Types';
 
 const Favorite = ({id, artist, title, releaseDate, genre}: FavoriteProps) => {
   return (
-    <article className='song' id={id}>
-      <div className="song-details">
+    <article className='.song-result' id={id}>
+      <div className="fav-details">
         <div className="title-artist">
           <h1>{title}</h1>
           <h3>{artist}</h3>
         </div>
-        <button className="favoriteBtn">
+        <button className="remove-fav-btn">
           Remove
         </button>
       </div>

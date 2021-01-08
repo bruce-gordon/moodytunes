@@ -17,7 +17,7 @@ const ResultsView = ({ addFavorite, songResults }: ResultsViewProps) => {
     );
   });
   return (
-    <section className="songList">
+    <section className="results-view">
       <h2 className="container-title">
         MoodyTunes Results
       </h2>

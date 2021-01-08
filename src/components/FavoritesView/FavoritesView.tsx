@@ -16,7 +16,7 @@ const FavoritesView = ({favoriteSongs}: FavoritesViewProps) => {
   const favorites = favoriteSongs.map(fav => {
     return (
       <Favorite
-        key={fav.id}
+        key={`${fav.id}1`}
         id={fav.id}
         artist={fav.artist_display_name}
         title={fav.title}
@@ -26,7 +26,7 @@ const FavoritesView = ({favoriteSongs}: FavoritesViewProps) => {
     );
   });
   return (
-    <section>
+    <section className='favorites-view'>
       <h2>Favorites View</h2>
       { favorites }
     </section>

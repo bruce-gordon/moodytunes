@@ -1,0 +1,29 @@
+* {
+  border: 1px solid white;
+}
+
+.remove-fav-btn {
+  color: white;
+  font-size: ;
+}
+
+.favorite {
+  border-radius: 25px;
+  padding: 1vw;
+  box-shadow: 0px 4px 10px 0px bisque;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 1em;
+  width: 70vw;
+  /* justify-content: center; */
+  height: 13vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fav-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

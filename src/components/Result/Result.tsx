@@ -8,7 +8,7 @@ const Result = ({ id, artist, title, releaseDate, genre, addFavorite}: ResultPro
   };
 
   return (
-    <article className="song" id={id}>
+    <article className="song-result" id={id}>
       <div className="song-details">
         <button className="moodBtn">➕</button>
         <div className="title-artist">

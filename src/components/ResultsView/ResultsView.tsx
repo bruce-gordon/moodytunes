@@ -18,7 +18,9 @@ const ResultsView = ({ addFavorite, songResults }: ResultsViewProps) => {
   });
   return (
     <section className="songList">
-      <h1 className="container-title">MoodyTunes Results</h1>
+      <h2 className="container-title">
+        MoodyTunes Results
+      </h2>
       {songs}
     </section>
   );

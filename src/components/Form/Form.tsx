@@ -14,8 +14,8 @@ const Form = ({ getMoodyTunes }: FormProps) => {
   }
 
   return (
-    <div>
-      Generate a list of songs that fit you're mood.
+    <div className='form-view'>
+      <h2>Generate a list of songs that fit you're mood.</h2>
       <form action="/action_page.php">
         <p>Please select your Mood:</p>
         <input onChange={ event => setMood('660000,950000') } type="radio" id="happy" name="mood" value="happy"/>
@@ -34,7 +34,9 @@ const Form = ({ getMoodyTunes }: FormProps) => {
         <input onChange={ event => setDecade('date90')} type="radio" id="90" name="decade" value="90"/>
         <label htmlFor="90">90's</label>
         <br/>
-        <button onClick={ (event: React.MouseEvent<HTMLElement>) => handleClick(event as any) }><Link to='/results'>Get Songs</Link></button>
+        <button onClick={ (event: React.MouseEvent<HTMLElement>) => handleClick(event as any) }>
+          <Link to='/results'>Get Songs</Link>
+        </button>
       </form>
     </div>
    );

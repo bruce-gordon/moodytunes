@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Form from "../Form/Form";
 import "./App.css";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 import { getTracksByMoodAPI } from "../../utilities/apiCalls";
 import ResultsView from "../ResultsView/ResultsView";
 import FavoritesView from '../FavoritesView/FavoritesView'
@@ -29,12 +29,25 @@ function App() {
   }
 
   return (
-    <div className="App-header">
-      <FavoritesView favoriteSongs={favoriteSongs}/>
+    <div className="App">
+      <header className='app-header'>
+        <h1 className='app-name'>MoodyTunes</h1>
+        <button>
+          <Link to='/favorites'>Go to Favorites</Link>
+        </button>
+      </header>
       <Switch>
         <Route
+          path='/favorites'
+          render={props => (<FavoritesView
+            favoriteSongs={favoriteSongs} {...props}
+            />)}
+        />
+        <Route
           path='/results'
-          render={props => (<ResultsView addFavorite={addFavorite} songResults={songResults} {...props} />)}
+          render={props => (<ResultsView
+            addFavorite={addFavorite} songResults={songResults} {...props}
+            />)}
         />
         <Route
           path='/'

@@ -6,13 +6,21 @@ import { getTracksByMoodAPI } from "../../utilities/apiCalls";
 import ResultsView from "../ResultsView/ResultsView";
 import FavoritesView from '../FavoritesView/FavoritesView'
 
+interface ISongResults {
+  id: string, 
+  artist_display_name: string, 
+  title: string, 
+  releasedate: string, 
+  genre: string
+}
+
 function App() {
   const [userName, setUserName] = useState("");
   const [songResults, setSongResults] = useState([]);
-  const [favoriteSongs, setFavoriteSongs] = useState([]);
+  const [favoriteSongs, setFavoriteSongs] = useState<ISongResults[]>([]); // type the return for setFavoriteSongs for the error: Type 'undefined' is not assignable to type 'never'.ts(2322)
+
 
   const getMoodyTunes = async (mood: string, genre: string, decade: string) => {
-    console.log("clicked!");
     const allGenres: string[] = [
       "hip hop",
       "vocal pop",
@@ -37,24 +45,26 @@ function App() {
       .filter(musicGenre => genre !== musicGenre)
       .join(",");
       console.log(excludedGenres)
+    const results = await getTracksByMoodAPI(valence, arousal, excludedGenres, decade)
     setSongResults(
-      await getTracksByMoodAPI(valence, arousal, excludedGenres, decade)
+      results
     );
   };
 
   const addFavorite: Function = (id: string) => {
-    console.log(songResults)
- 
-    songResults.find(song => song.id === id)
+    type AnyType = any;
+    const favorite: ISongResults = songResults.find((song:ISongResults) => song.id === id) as AnyType // favorite needs to be set to any???
+    setFavoriteSongs([favorite, ...favoriteSongs]) // putting these params inside an array (error expected 1 arg but got 2+)
+    console.log(favoriteSongs)
   }
 
   return (
     <div className="App-header">
-      <FavoritesView addFavorite={addFavorite} favoriteSongs={favoriteSongs}/>
+      <FavoritesView favoriteSongs={favoriteSongs}/>
       <Switch>
         <Route
           path='/results'
-          render={props => (<ResultsView songResults={songResults} {...props} />)}
+          render={props => (<ResultsView addFavorite={addFavorite} songResults={songResults} {...props} />)}
         />
         <Route
           path='/'

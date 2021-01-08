@@ -1,13 +1,13 @@
 import React from 'react';
 
 interface FavoritesViewProps {
-  favoriteSongs: {
+  favoriteSongs:
+   {
     id: string, 
-    artist: string, 
+    artist_display_name: string, 
     title: string, 
-    releaseDate: string, 
-    genre: string,
-    addFavorite: Function
+    releasedate: string, 
+    genre: string
   }[];
 }
  

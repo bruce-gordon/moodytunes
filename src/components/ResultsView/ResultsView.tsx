@@ -3,15 +3,16 @@ import Result from '../Result/Result'
 
 
 interface ResultsViewProps {
-  songResults: {
-    id: string, 
-    artist_display_name: string, 
-    title: string, 
-    releasedate: string, 
-    genre: string,
-    addFavorite: Function }[];
-}
-const ResultsView = ({ songResults }: ResultsViewProps) => {
+  songResults: 
+    {
+      id: string, 
+      artist_display_name: string, 
+      title: string, 
+      releasedate: string, 
+      genre: string,
+    }[]
+  addFavorite: Function};
+const ResultsView = ({vorite, songResults }: ResultsViewProps) => { addFa
    const songs = songResults.map((song) => {
      return (
        <Result

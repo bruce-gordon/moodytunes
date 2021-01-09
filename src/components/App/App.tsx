@@ -29,8 +29,10 @@ function App() {
   }
 
   const removeFavorite = (id: string) => {
-    const favorites = songResults.filter((song:ISongResults) => song.id !== id) as any;
-    setFavoriteSongs([favorites])
+    const favorites = favoriteSongs.filter((song:ISongResults) => song.id !== id) as any;
+    console.log(favorites)
+    setFavoriteSongs(favorites);
+    console.log(favoriteSongs);
   }
 
   return (

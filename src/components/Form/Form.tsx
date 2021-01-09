@@ -10,7 +10,6 @@ const Form = ({ getMoodyTunes }: FormProps) => {
 
   const handleClick = (event: MouseEvent) => {
     event.preventDefault()
-    console.log(mood, decade)
     getMoodyTunes(mood, decade);
   }
 

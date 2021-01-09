@@ -3,6 +3,12 @@ import { FavoriteProps } from '../common/Types';
 import './Favorite.css';
 
 const Favorite = ({id, artist, title, releaseDate, genre, removeFavorite}: FavoriteProps) => {
+
+  const handleClick = () => {
+    console.log("handleclick");
+    removeFavorite(id);
+  }
+
   return (
     <article className='favorite' id={id}>
       <div className="fav-details">
@@ -10,7 +16,7 @@ const Favorite = ({id, artist, title, releaseDate, genre, removeFavorite}: Favor
           <h1>{title}</h1>
           <h3>{artist}</h3>
         </div>
-        <button className="remove-fav-btn">
+        <button onClick={() => handleClick()} className="remove-fav-btn">
           Remove
         </button>
       </div>

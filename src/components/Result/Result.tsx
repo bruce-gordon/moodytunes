@@ -3,7 +3,6 @@ import { ResultProps } from "../common/Types";
 
 const Result = ({ id, artist, title, releaseDate, genre, addFavorite}: ResultProps) => {
   const handleClick = () => {
-    console.log("handleclick");
     addFavorite(id);
   };
 

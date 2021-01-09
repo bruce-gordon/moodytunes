@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Favorite from "./Favorite";
 
@@ -30,7 +30,7 @@ describe("Favorite", () => {
     expect(removeBtn).toBeInTheDocument();
   });
 
-  it("call addFavorite() with correct params", () => {
+  it("call removeFavorite() with correct params", () => {
     const mockRemoveFavorite = jest.fn();
     render(
       <Favorite

@@ -60,7 +60,8 @@ function App() {
         <Route
           path='/results'
           render={props => (songResults.length ? <ResultsView
-            addFavorite={addFavorite} songResults={songResults} {...props} /> : <h2 {...props}> Sorry, there are no results for that selection.<br/> Please try again.</h2>
+            addFavorite={addFavorite} songResults={songResults} {...props} /> : 
+            <h2 {...props}> Sorry, there are no results for that selection.<br/> Please try again.</h2>
           )}
         />
         <Route

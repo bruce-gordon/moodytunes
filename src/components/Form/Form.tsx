@@ -5,38 +5,50 @@ import './Form.css';
 
 const Form = ({ getMoodyTunes }: FormProps) => {
   const [mood, setMood] = useState('');
-  // const [genre, setGenre] = useState('');
   const [decade, setDecade] = useState('');
 
   const handleClick = (event: MouseEvent) => {
-    event.preventDefault()
+    event.preventDefault();
     getMoodyTunes(mood, decade);
   }
 
+const getStylings = (elementId:string) => {
+  let className = decade === elementId ? 'selected-choice' : 'choice';
+  return className 
+}
+
   return (
     <div className='form-view'>
-      <h2>Generate a list of songs that fit your mood.</h2>
       <form action="/action_page.php">
+        <h2>Generate a list of songs that fit your mood.</h2>
         <p className='form-subheader'>Please select your Mood:</p>
         <div className='form-options'>
-          <input onChange={ event => setMood('660000,950000') } type="radio" id="happy" name="mood" value="happy"/>
-          <label htmlFor="happy">Happy</label><br/>
-          <input onChange={ event => setMood( '235000,91000') } type="radio" id="sad" name="mood" value="sad"/>
-          <label htmlFor="sad">Sad</label><br/>
-          <input onChange={ event => setMood('895000,295000') } type="radio" id="angry" name="mood" value="angry"/>
-          <label htmlFor="angry">Angry</label>
+        <input onChange={ event => setMood('660000,950000') } type="radio" id="happy" name="mood" value="happy"/>
+        <label htmlFor="happy">Happy</label><br/>
+
+        <input onChange={ event => setMood( '235000,91000') } type="radio" id="sad" name="mood" value="sad"/>
+        <label htmlFor="sad">Sad</label><br/>
+
+        <input onChange={ event => setMood( '100000,900000') } type="radio" id="content" name="mood" value="sad"/>
+        <label htmlFor="content">Content</label><br/>
+
+        <input onChange={ event => setMood( '900000,300000') } type="radio" id="enraged" name="mood" value="enraged"/>
+        <label htmlFor="enraged">Enraged</label><br/>
+
+        <input onChange={ event => setMood('895000,295000') } type="radio" id="angry" name="mood" value="angry"/>
+        <label htmlFor="angry">Angry</label>
         </div>
 
         <p className='form-subheader'>Please select a Decade:</p>
         <div className='form-options'>
-          <input onChange={ event => setDecade('date70')} type="radio" id="70" name="decade" value="70"/>
-          <label htmlFor="70">70's</label><br/>
-          <input onChange={ event => setDecade('date80')} type="radio" id="80" name="decade" value="80"/>
-          <label htmlFor="80">80's</label><br/>
-          <input onChange={ event => setDecade('date90')} type="radio" id="90" name="decade" value="90"/>
-          <label htmlFor="90">90's</label>
+        <p className={ getStylings('date50') } onClick={ event => setDecade('date50')}>1950's</p><br/>
+        <p className={ getStylings('date60') } onClick={ event => setDecade('date60')}>1960's</p><br/>
+        <p className={ getStylings('date70') } onClick={ event => setDecade('date70')}>1970's</p><br/>
+        <p className={ getStylings('date80') } onClick={ event => setDecade('date80')}>1980's</p><br/>
+        <p className={ getStylings('date90') } onClick={ event => setDecade('date90')}>1990's</p><br/>
+        <p className={ getStylings('date00') } onClick={ event => setDecade('date00')}>2000's</p><br/>
+        <p className={ getStylings('date10') } onClick={ event => setDecade('date10')}>2010's</p><br/>
         </div>
-
         <button onClick={ (event: React.MouseEvent<HTMLElement>) => handleClick(event as any) }>
           <Link to='/results'>Get Songs</Link>
         </button>
@@ -53,3 +65,5 @@ const Form = ({ getMoodyTunes }: FormProps) => {
 // <input onChange={ event => setGenre('folk')} type="radio" id="folk" name="genre" value="folk"/>
 // <label htmlFor="folk">Folk</label>
 export default Form;
+
+

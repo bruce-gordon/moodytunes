@@ -1,12 +1,3 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
-
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
 import {
   render,
   screen,
@@ -28,7 +19,7 @@ describe("App", () => {
       </MemoryRouter>
     );
 
-    const heading = screen.getByText("Generate a list of songs that fit you're mood.")
+    const heading = screen.getByRole('heading', { name: /moodytunes/i })
     expect(heading).toBeInTheDocument()
   });
 
@@ -39,7 +30,5 @@ describe("App", () => {
       </MemoryRouter>
     );
 
-    const heading = screen.getByText("Generate a list of songs that fit you're mood.")
-    expect(heading).toBeInTheDocument()
   });
 });

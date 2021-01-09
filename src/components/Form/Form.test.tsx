@@ -20,9 +20,6 @@ describe("App", () => {
         <Form getMoodyTunes={mockGetMoodyTunes} />
       </MemoryRouter>
     );
-    const heading = screen.getByText(
-      "Generate a list of songs that fit you're mood."
-    );
     const moodHeader = screen.getByText("Please select your Mood:");
     const mood1 = screen.getByText("Happy");
     const mood2 = screen.getByText("Sad");
@@ -40,7 +37,6 @@ describe("App", () => {
     const decade90Radio = screen.getByRole("radio", { name: /90's/i });
     const submitButton = screen.getByRole("link", { name: /get songs/i });
 
-    expect(heading).toBeInTheDocument();
     expect(moodHeader).toBeInTheDocument();
     expect(mood1).toBeInTheDocument();
     expect(mood2).toBeInTheDocument();
@@ -77,7 +73,6 @@ describe("App", () => {
 
     expect(mockGetMoodyTunes).toHaveBeenCalledWith(
       "660000,950000",
-      "",
       "date70"
     );
   });

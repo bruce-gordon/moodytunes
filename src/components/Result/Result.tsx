@@ -1,21 +1,13 @@
 import "./Result.css";
 import { ResultProps } from "../common/Types";
 
-const Result = ({
-  id,
-  artist,
-  title,
-  releaseDate,
-  genre,
-  addFavorite,
-}: ResultProps) => {
+const Result = ({ id, artist, title, releaseDate, genre, addFavorite}: ResultProps) => {
   const handleClick = () => {
-    console.log("handleclick");
     addFavorite(id);
   };
 
   return (
-    <article className="song" id={id}>
+    <article className="song-result" id={id}>
       <div className="song-details">
         <button className="moodBtn">➕</button>
         <div className="title-artist">

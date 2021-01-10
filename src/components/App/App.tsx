@@ -18,7 +18,8 @@ function App() {
     // const excludedGenres: string = allGenres
     //   .filter(musicGenre => genre !== musicGenre)
     //   .join(",");
-    const results = await getTracksByMoodAPI(valence, arousal, decade)
+    setSongResults([]);
+    const results = await getTracksByMoodAPI(valence, arousal, decade);
     setSongResults(results);
   };
 

@@ -18,7 +18,8 @@ function App() {
     // const excludedGenres: string = allGenres
     //   .filter(musicGenre => genre !== musicGenre)
     //   .join(",");
-    const results = await getTracksByMoodAPI(valence, arousal, decade)
+    setSongResults([]);
+    const results = await getTracksByMoodAPI(valence, arousal, decade);
     setSongResults(results);
   };
 
@@ -59,9 +60,10 @@ function App() {
         />
         <Route
           path='/results'
-          render={props => (<ResultsView
-            addFavorite={addFavorite} songResults={songResults} {...props}
-            />)}
+          render={props => (songResults.length ? <ResultsView
+            addFavorite={addFavorite} songResults={songResults} {...props} /> : 
+            <h2 {...props}> Sorry, there are no results for that selection.<br/> Please try again.</h2>
+          )}
         />
         <Route
           path='/'

@@ -23,7 +23,7 @@ const ResultsView = ({ addFavorite, songResults }: ResultsViewProps) => {
       </h2>
       {songs}
     </section>
-  );
+  )
 };
 
 export default ResultsView;

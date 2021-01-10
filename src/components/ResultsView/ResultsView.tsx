@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Result from "../Result/Result";
 import {ResultsViewProps} from '../common/Types'
 
 const ResultsView = ({ addFavorite, songResults }: ResultsViewProps) => {
+  useEffect(() => {
+    document.title = `MoodyTunes - Results (${songResults.length})`
+  }, [])
+  
   const songs = songResults.map(song => {
     return (
       <Result

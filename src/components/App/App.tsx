@@ -31,9 +31,31 @@ function App() {
 
   const removeFavorite = (id: string) => {
     const favorites = favoriteSongs.filter((song:ISongResults) => song.id !== id) as any;
-    console.log(favorites)
     setFavoriteSongs(favorites);
-    console.log(favoriteSongs);
+  }
+
+  const checkSongResults = () => {
+    if (!songResults) {
+      return (
+        <h2>
+          Sorry, there are no results for that selection.<br/>
+          <p>Click the "Home" or "back" button to try again.
+          </p>
+        </h2>
+      )
+    } else if (songResults.length) {
+      return (
+        <ResultsView
+          addFavorite={addFavorite} songResults={songResults}
+        />
+      )
+    } else if (!songResults.length) {
+      return (
+        <h2>
+          Loading your results... just a moment.<br/> Please try again.
+        </h2>
+      )
+    }
   }
 
   return (
@@ -47,7 +69,6 @@ function App() {
           <Link to='/favorites' className='nav-btn-link'>
             <div className='nav-btn'>Go to Favorites</div>
           </Link>
-
         </nav>
       </header>
       <Switch>
@@ -60,10 +81,7 @@ function App() {
         />
         <Route
           path='/results'
-          render={props => (songResults.length ? <ResultsView
-            addFavorite={addFavorite} songResults={songResults} {...props} /> : 
-            <h2 {...props}> Sorry, there are no results for that selection.<br/> Please try again.</h2>
-          )}
+          render={props => (checkSongResults())}
         />
         <Route
           path='/'

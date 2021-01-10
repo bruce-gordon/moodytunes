@@ -10,7 +10,7 @@ form {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-    width: 50vw;
+    width: 60vw;
     border-radius: 15px;
     padding: 10px;
     border: solid 2px;
@@ -36,16 +36,21 @@ button a {
     text-decoration: none;
 }
 
+form button {
+  height: 4vh
+}
+
 .choice {
   border: solid 1px grey;
-  padding: 5px;
+  padding: 10px;
   border-radius: 15px;
 }
 
 .selected-choice {
   border: solid 1px grey;
   background-color: orange;
-  padding: 5px;
+  padding: 10px;
+  font-weight: bolder;
   border-radius: 15px;
 }
 

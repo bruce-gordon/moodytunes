@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Favorite from '../Favorite/Favorite';
 import './FavoritesView.css';
 
@@ -15,6 +15,10 @@ interface FavoritesViewProps {
 }
 
 const FavoritesView = ({favoriteSongs, removeFavorite}: FavoritesViewProps) => {
+  useEffect(() => {
+    document.title = `MoodyTunes - Favorites (${favoriteSongs.length})`
+  }, [])
+  
   const favorites = favoriteSongs.map(fav => {
     return (
       <Favorite

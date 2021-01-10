@@ -28,6 +28,7 @@ const FavoritesView = ({favoriteSongs, removeFavorite}: FavoritesViewProps) => {
         title={fav.title}
         releaseDate={fav.releasedate}
         genre={fav.genre}
+        favoriteSongs={favoriteSongs}
         removeFavorite={removeFavorite}
       />
     );

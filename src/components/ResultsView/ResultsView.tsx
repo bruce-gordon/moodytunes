@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Result from "../Result/Result";
 import {ResultsViewProps} from '../common/Types'
 
-const ResultsView = ({ addFavorite, songResults }: ResultsViewProps) => {
+const ResultsView = ({ addFavorite, songResults, favoriteSongs }: ResultsViewProps) => {
   useEffect(() => {
     document.title = `MoodyTunes - Results (${songResults.length})`
   }, [])
@@ -16,6 +16,7 @@ const ResultsView = ({ addFavorite, songResults }: ResultsViewProps) => {
         title={song.title}
         releaseDate={song.releasedate}
         genre={song.genre}
+        favoriteSongs={favoriteSongs}
         addFavorite={addFavorite}
       />
     );

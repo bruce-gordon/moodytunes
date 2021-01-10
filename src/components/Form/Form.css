@@ -10,10 +10,19 @@ form {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-    width: 60vw;
+    width: 70vw;
     border-radius: 15px;
-    padding: 10px;
+    padding: 5px;
+    
     border: solid 2px;
+}
+
+.form-options p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 1px #282c34;
+  padding: 9px;
 }
 
 .form-subheader {
@@ -41,21 +50,26 @@ form button {
 }
 
 .choice {
-  border: solid 1px grey;
-  padding: 10px;
+  border: solid 2px #282c34;
+  padding: 9px;
   border-radius: 15px;
+}
+
+
+
+.form-options p:hover {
+  border: solid 1px orange;
+  padding: 9px;
+}
+
+p svg {
+  width: 6vw;
+  height: 10vh;
 }
 
 .selected-choice {
-  border: solid 1px grey;
   background-color: orange;
-  padding: 10px;
-  font-weight: bolder;
+  border: solid 1px orange;
+  padding: 9px;
   border-radius: 15px;
 }
-
-
-
-/* .decade-choice:active {
-  background-color: red;
-} */

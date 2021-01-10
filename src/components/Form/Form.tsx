@@ -5,6 +5,7 @@ import './Form.css';
 
 const Form = ({ getMoodyTunes }: FormProps) => {
   const [mood, setMood] = useState('');
+  // const [genre, setGenre] = useState('');
   const [decade, setDecade] = useState('');
 
   const handleClick = (event: MouseEvent) => {
@@ -42,11 +43,24 @@ const getStylings = (selector:string, elementId:string) => {
           <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="tired" className="svg-inline--fa fa-tired fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 448c-110.3 0-200-89.7-200-200S137.7 56 248 56s200 89.7 200 200-89.7 200-200 200zm129.1-303.8c-3.8-4.4-10.3-5.4-15.3-2.5l-80 48c-3.6 2.2-5.8 6.1-5.8 10.3s2.2 8.1 5.8 10.3l80 48c5.4 3.2 11.8 1.6 15.3-2.5 3.8-4.5 3.9-11 .1-15.5L343.6 208l33.6-40.3c3.8-4.5 3.7-11.1-.1-15.5zM220 208c0-4.2-2.2-8.1-5.8-10.3l-80-48c-5-3-11.5-1.9-15.3 2.5-3.8 4.5-3.9 11-.1 15.5l33.6 40.3-33.6 40.3c-3.8 4.5-3.7 11 .1 15.5 3.5 4.1 9.9 5.7 15.3 2.5l80-48c3.6-2.2 5.8-6.1 5.8-10.3zm28 64c-45.4 0-100.9 38.3-107.8 93.3-1.5 11.8 6.9 21.6 15.5 17.9C178.4 373.5 212 368 248 368s69.6 5.5 92.3 15.2c8.5 3.7 17-6 15.5-17.9-6.9-55-62.4-93.3-107.8-93.3z"></path></svg>
           Angry
           </p>
-           {/* <p className= { getStylings(mood, '900000,300000') } onClick={ event => setMood('900000,300000') }>
+           {/* <p className= { getStylings(mood, '900000,900000') } onClick={ event => setMood('900000,300000') }>
           Enraged
           </p> */}
         </div>
         <br/>
+        {/* <p className='form-subheader'>Please select a <b>Genre</b>:</p>
+        <br/>
+        <div className='form-options moods'>
+        <p className={ getStylings(genre, 'rock') } onClick={ event => setGenre('rock')}>Rock</p><br/>
+        <p className={ getStylings(genre, 'hip hop') } onClick={ event => setGenre('hip hop')}>Hip Hop</p><br/>
+        <p className={ getStylings(genre, 'jazz') } onClick={ event => setGenre('jazz')}>Jazz</p><br/>
+        <p className={ getStylings(genre, 'blues') } onClick={ event => setGenre('blues')}>Blues</p><br/>
+        <p className={ getStylings(genre, 'pop') } onClick={ event => setGenre('pop')}>Pop</p><br/>
+        <p className={ getStylings(genre, 'regae') } onClick={ event => setGenre('regae')}>Regae</p><br/>
+        <p className={ getStylings(genre, 'country') } onClick={ event => setGenre('country')}>Country</p><br/>
+        <p className={ getStylings(genre, 'folk') } onClick={ event => setGenre('folk')}>Folk</p><br/>
+        </div>
+        <br/> */}
         <p className='form-subheader'>Please select a <b>Decade</b>:</p>
         <br/>
         <div className='form-options decades'>
@@ -68,13 +82,6 @@ const getStylings = (selector:string, elementId:string) => {
    );
 }
 
-// <p>Please select a Genre:</p>
-// <input onChange={ event => setGenre('rock')} type="radio" id="rock" name="genre" value="rock"/>
-// <label htmlFor="rock">Rock</label><br/>
-// <input onChange={ event => setGenre('hip hop')} type="radio" id="hip hop" name="genre" value="hip hop"/>
-// <label htmlFor="hip hop">Hip Hop</label><br/>
-// <input onChange={ event => setGenre('folk')} type="radio" id="folk" name="genre" value="folk"/>
-// <label htmlFor="folk">Folk</label>
 export default Form;
 
 

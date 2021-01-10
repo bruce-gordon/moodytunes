@@ -2,9 +2,7 @@ import React from "react";
 import Result from "../Result/Result";
 import {ResultsViewProps} from '../common/Types'
 
-const ResultsView = ({ addFavorite, songResults }: ResultsViewProps) => {
-  console.log(songResults);
-  
+const ResultsView = ({ addFavorite, songResults }: ResultsViewProps) => {  
   const songs = songResults.map(song => {
     return (
       <Result

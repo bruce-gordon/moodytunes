@@ -10,13 +10,12 @@ const Form = ({ getMoodyTunes }: FormProps) => {
 
   const handleClick = (event: MouseEvent) => {
     event.preventDefault();
-
     getMoodyTunes(mood, decade);
   }
 
 const getStylings = (selector:string, elementId:string) => {
   let className = selector === elementId ? 'selected-choice' : 'choice';
-  return className 
+  return className
 }
 
   return (
@@ -83,5 +82,3 @@ const getStylings = (selector:string, elementId:string) => {
 }
 
 export default Form;
-
-

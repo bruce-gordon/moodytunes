@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import "./Result.css";
 import { ResultProps } from "../common/Types";
 import { gsap } from "gsap";
@@ -10,16 +11,16 @@ const Result = ({
   genre,
   addFavorite,
 }: ResultProps) => {
+  
+  const [inFavorites, setInFavorites] = useState(false)
+
   let songTitle: string = title
     .split(" ")
     .map(word => word.charAt(0).toUpperCase() + word.substring(1))
     .join(" ");
 
-  let inFavorites: boolean = false;
-
   const animateAddFavorite = (id:string) => {
     let tl = gsap.timeline();
-    if (!inFavorites) {
       gsap.set(`.${'--' + id}`, {  //start animation state
         transition: "ease 0",
         transform: "rotate(0deg)",
@@ -31,13 +32,16 @@ const Result = ({
         .to(`.${'--' + id}`, { duration: 0.2, filter: "grayscale(0%)" }, "-=.4");
       gsap.set(`.${'--' + id}`, { rotateY: 0, translateY: 0 });
 
-      inFavorites = true;
-    }
+      setInFavorites(true)
   };
 
   const handleClick = () => {
-    addFavorite(id);
-    animateAddFavorite(id);
+    console.log(inFavorites)
+    if (!inFavorites) {
+      addFavorite(id);
+      animateAddFavorite(id);
+    }
+    console.log(inFavorites)
   };
 
   return (

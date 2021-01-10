@@ -1,25 +1,42 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import "./Result.css";
 import { ResultProps } from "../common/Types";
 import { gsap } from "gsap";
 
-const Result = ({
+const Result = (
+  {
   id,
   artist,
   title,
   releaseDate,
   genre,
+  favoriteSongs,
   addFavorite,
 }: ResultProps) => {
   
   const [inFavorites, setInFavorites] = useState(false)
+
+  useEffect(() => {
+    checkFavoriteStatus()
+    // updateFavoriteStatus()
+    }, [])
 
   let songTitle: string = title
     .split(" ")
     .map(word => word.charAt(0).toUpperCase() + word.substring(1))
     .join(" ");
 
-  const animateAddFavorite = (id:string) => {
+  const checkFavoriteStatus = () => {
+    const match = favoriteSongs.find(song => song.id === id)
+    if (match) {
+      setInFavorites(true)
+      animateAddFavorite()
+    } else {
+      setInFavorites(false)
+    }
+  }
+
+  const animateAddFavorite = () => {
     let tl = gsap.timeline();
       gsap.set(`.${'--' + id}`, {  //start animation state
         transition: "ease 0",
@@ -36,12 +53,10 @@ const Result = ({
   };
 
   const handleClick = () => {
-    console.log(inFavorites)
     if (!inFavorites) {
       addFavorite(id);
-      animateAddFavorite(id);
+      animateAddFavorite();
     }
-    console.log(inFavorites)
   };
 
   return (

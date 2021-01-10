@@ -15,6 +15,7 @@ interface FavoritesViewProps {
 }
 
 const FavoritesView = ({favoriteSongs, removeFavorite}: FavoritesViewProps) => {
+  console.log(favoriteSongs)
   const favorites = favoriteSongs.map(fav => {
     return (
       <Favorite

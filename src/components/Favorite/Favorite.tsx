@@ -5,7 +5,6 @@ import './Favorite.css';
 const Favorite = ({id, artist, title, releaseDate, genre, removeFavorite}: FavoriteProps) => {
 
   const handleClick = () => {
-    console.log("handleclick");
     removeFavorite(id);
   }
 

@@ -23,10 +23,19 @@ function App() {
     setSongResults(results);
   };
 
+
+
   const addFavorite: Function = (id: string) => {
     type AnyType = any;
-    const favorite = songResults.find((song:ISongResults) => song.id === id) as AnyType // favorite needs to be set to any???
-    setFavoriteSongs([favorite, ...favoriteSongs]) // putting these params inside an array (error expected 1 arg but got 2+)
+    const favorite = songResults.find((song:ISongResults) => song.id === id) as AnyType
+    if (!favoriteSongs.includes(favorite)) {
+      storeFavorites(favorite);
+      setFavoriteSongs([favorite, ...favoriteSongs])
+    }
+  }
+
+  const storeFavorites = (favorite: any) => {
+    localStorage.setItem("favorites", JSON.stringify([favorite, ...favoriteSongs]));
   }
 
   const removeFavorite = (id: string) => {

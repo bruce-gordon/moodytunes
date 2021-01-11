@@ -24,7 +24,7 @@ const ResultsView = ({ addFavorite, songResults, favoriteSongs }: ResultsViewPro
   return (
     <section className="results-view">
       <h2 className="container-title">
-        MoodyTunes Results
+        {'{Mood}'} songs
       </h2>
       {songs}
     </section>

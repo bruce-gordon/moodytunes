@@ -37,18 +37,14 @@ h3 {
     font-size: .6em;
 }
 
-/* .song-details button {
-    width: 5vw;
-    height: 5vh;
-    background: none;
-    border: none;
-} */
-
 .favoriteBtn{
   font-size: 2vw;
   background: none;
   border: none;
+}
 
+.favoriteBtn:focus {
+    outline: none
 }
 
 .favoriteBtn:hover{

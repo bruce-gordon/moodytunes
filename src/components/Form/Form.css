@@ -60,6 +60,10 @@ form button:hover{
    text-decoration: none;
 }
 
+form button:focus {
+  outline: none;
+}
+
 .choice {
   border: solid 2px #282c34;
   padding: 9px;

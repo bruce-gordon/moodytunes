@@ -1,4 +1,3 @@
-
 .remove-fav-btn {
   color: #282c34;
   background: white;
@@ -14,18 +13,9 @@
   background: #282c34;
   border: 2px solid white;
 }
-
-/* .favorite {
-  border-radius: 25px;
-  padding: 1vw;
-  box-shadow: 0px 4px 10px 0px bisque;
-  margin-bottom: 1em;
-  width: 70vw;
-  height: 13vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-} */
+.remove-fav-btn:focus {
+  outline: none
+}
 
 .fav-details {
   display: flex;
@@ -56,3 +46,4 @@
     margin-bottom: 1em;
     box-shadow: 0px 6px 10px 0px #364259;
 }
+

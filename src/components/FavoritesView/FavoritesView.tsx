@@ -10,7 +10,7 @@ interface FavoritesViewProps {
 const FavoritesView = ({removeFavorite}: FavoritesViewProps) => {
   let storedFavs: any = useLocalStorage('favorites');
   storedFavs = storedFavs[0];
-  if(storedFavs) {
+  if(storedFavs.length) {
   const favorites = storedFavs.map((fav: any) => {
     return (
       <Favorite

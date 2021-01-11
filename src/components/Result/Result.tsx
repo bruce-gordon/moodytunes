@@ -5,8 +5,10 @@ const Result = ({ id, artist, title, releaseDate, genre, addFavorite}: ResultPro
   const handleClick = () => {
     addFavorite(id);
   };
-var songTitle = title;
-songTitle = title.split(' ')
+  let songTitle = title.split(' ')
+    .map((word) => word.charAt(0).toUpperCase() + word.substring(1))
+    .join(' ');
+  let genreTitle = genre.split(' ')
     .map((word) => word.charAt(0).toUpperCase() + word.substring(1))
     .join(' ');
 
@@ -27,7 +29,7 @@ songTitle = title.split(' ')
           <b>Release Date:</b> {releaseDate}
         </p>
         <p>
-          <b>Genre:</b> {genre}
+          <b>Genre:</b> {genreTitle}
         </p>
       </div>
     </article>

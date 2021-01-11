@@ -1,11 +1,10 @@
-
 .remove-fav-btn {
   color: #282c34;
   background: white;
   height: 4vh;
   border-radius: 5px;
   border: 2px solid #282c34;
-  margin-right: 2vw;
+  margin-right: .3vw;
   font-weight: bolder;
 }
 
@@ -14,18 +13,8 @@
   background: #282c34;
   border: 2px solid white;
 }
-
-.favorite {
-  border-radius: 25px;
-  padding: 1vw;
-  box-shadow: 0px 4px 10px 0px bisque;
-  transition: all 0.2s ease-in-out;
-  margin-bottom: 1em;
-  width: 70vw;
-  height: 13vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.remove-fav-btn:focus {
+  outline: none
 }
 
 .fav-details {
@@ -33,4 +22,28 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+} 
+
+.title-artist {
+  margin-left: .3vw;
+} 
+
+.fav-title {
+  font-size: .8em;
+} 
+
+.favorite {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #FF8367;
+    padding: 15px 8px;
+    margin-top: 1em;
+    margin: auto;
+    border-radius: 20px;
+    width: 20vw;
+    height: 13vh;
+    margin-bottom: 1em;
+    box-shadow: 0px 6px 10px 0px #364259;
 }
+

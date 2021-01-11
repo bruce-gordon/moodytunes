@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {FormProps} from '../common/Types';
 import './Form.css';
-import { angry, sad, happy, content, amorous, excited } from '../../utilities/icons';
+import { angry, sad, happy, chill, amorous, excited } from '../../utilities/icons';
 
 const Form = ({ getMoodyTunes, updateMood }: FormProps) => {
   const [mood, setMood] = useState('');
@@ -40,9 +40,9 @@ const handleMood = (moodNum: string, moodWord: string) => {
             { sad }
           Sad
           </p>
-          <p className= { `icon ${getStylings(mood, '100000,900000')}` } onClick={ event => handleMood('100000,900000', 'Content') }>
-          { content }
-          Content
+          <p className= { `icon ${getStylings(mood, '100000,900000')}` } onClick={ event => handleMood('100000,900000', 'Chill') }>
+          { chill }
+          Chill
           </p>
           <p className= { `icon ${getStylings(mood, '925000, 607500')}` } onClick={ event => handleMood('925000, 607500', 'Amorous') }>
           { amorous }

@@ -33,7 +33,7 @@ export const excited = (
   </svg>
 )
 
-export const content = (
+export const chill = (
   <svg
     aria-hidden="true"
     focusable="false"

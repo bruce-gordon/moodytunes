@@ -29,11 +29,13 @@ function App() {
   const addFavorite = (id: string) => {
     type AnyType = any;
     const favorite = songResults.find((song:ISongResults) => song.id === id) as AnyType
-    if (!favoriteSongs.includes(favorite)) {
-      setFavoriteSongs([favorite, ...favoriteSongs]);
-      setState([favorite, ...favoriteSongs]);
+    if (favoriteSongs === undefined) {
+      setFavoriteSongs([favorite]);
+    } else if (!favoriteSongs.includes(favorite)) {
+      setFavoriteSongs([favorite, ...favoriteSongs])
     }
-  }
+      setState(favoriteSongs);
+    }
 
   const removeFavorite = (id: string) => {
     const favorites = favoriteSongs.filter((song:ISongResults) => song.id !== id) as any;

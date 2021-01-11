@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "../Form/Form";
 import "./App.css";
 import { Route, Switch, Link } from "react-router-dom";
@@ -6,11 +6,14 @@ import { getTracksByMoodAPI } from "../../utilities/apiCalls";
 import ResultsView from "../ResultsView/ResultsView";
 import FavoritesView from '../FavoritesView/FavoritesView'
 import {ISongResults, allGenres} from '../common/Types'
+import { useLocalStorage } from '../../utilities/useLocalStorage';
+
 
 function App() {
-  const [userName, setUserName] = useState("");
+  const [userName, setUserName] = useLocalStorage("userName", '');
   const [songResults, setSongResults] = useState([]);
   const [favoriteSongs, setFavoriteSongs] = useState<ISongResults[]>([]); // type the return for setFavoriteSongs for the error: Type 'undefined' is not assignable to type 'never'.ts(2322)
+  const [state, setState] = useLocalStorage("favorites");
 
   const getMoodyTunes = async (mood: string, decade: string) => {
     const arousal: string = mood.split(",")[0];
@@ -23,24 +26,19 @@ function App() {
     setSongResults(results);
   };
 
-
-
-  const addFavorite: Function = (id: string) => {
+  const addFavorite = (id: string) => {
     type AnyType = any;
     const favorite = songResults.find((song:ISongResults) => song.id === id) as AnyType
     if (!favoriteSongs.includes(favorite)) {
-      storeFavorites(favorite);
-      setFavoriteSongs([favorite, ...favoriteSongs])
+      setFavoriteSongs([favorite, ...favoriteSongs]);
+      setState([favorite, ...favoriteSongs]);
     }
-  }
-
-  const storeFavorites = (favorite: any) => {
-    localStorage.setItem("favorites", JSON.stringify([favorite, ...favoriteSongs]));
   }
 
   const removeFavorite = (id: string) => {
     const favorites = favoriteSongs.filter((song:ISongResults) => song.id !== id) as any;
-    setFavoriteSongs(favorites);
+    setFavoriteSongs(favorites)
+    setState(favoriteSongs);
   }
 
   const checkSongResults = () => {
@@ -83,10 +81,10 @@ function App() {
       <Switch>
         <Route
           path='/favorites'
-          render={props => (<FavoritesView
+          render={props => (
+          <FavoritesView
             removeFavorite={removeFavorite}
-            favoriteSongs={favoriteSongs} {...props}
-            />)}
+          />)}
         />
         <Route
           path='/results'

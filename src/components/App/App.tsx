@@ -59,7 +59,10 @@ function App() {
     } else if (!songResults.length) {
       return (
         <h2>
-          Loading your results... just a moment.<br/> Please try again.
+          <br/>
+          One moment while your song results load...
+          <br/>
+          {/* <br/> Please try again. */}
         </h2>
       )
     }
@@ -74,7 +77,7 @@ function App() {
             <div className='nav-btn'>Home</div>
           </Link>
           <Link to='/favorites' className='nav-btn-link'>
-            <div className='nav-btn'>Go to Favorites</div>
+            <div className='nav-btn'>View Favorites</div>
           </Link>
         </nav>
       </header>

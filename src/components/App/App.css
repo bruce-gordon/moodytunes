@@ -23,7 +23,7 @@
 }
 
 @keyframes run {
-    0% { right: 0;}
+    0% { right: -10%;}
     100%{ right : 91%;}
     /* 100%{ left: 0;} */
 }

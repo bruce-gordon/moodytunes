@@ -26,7 +26,7 @@ function App() {
   };
 
   const addFavorite = (id: string) => {
-//     type AnyType = any;
+    type AnyType = any;
 //     const favorite = songResults.find(
 //       (song: ISongResults) => song.id === id
 //     ) as AnyType; // favorite needs to be set to any???

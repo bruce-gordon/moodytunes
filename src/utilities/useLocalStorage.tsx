@@ -10,7 +10,7 @@ export const useLocalStorage = <T,>
   const [state, setState] = useState<T | undefined>(() => {
        if (!initialValue) {
         const value = localStorage.getItem(key);
-        return value ? JSON.parse(value) : console.log('poop')
+        return value ? JSON.parse(value) : console.log('no items in storage')
        }
   });
 

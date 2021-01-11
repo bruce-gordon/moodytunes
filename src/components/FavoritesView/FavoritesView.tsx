@@ -4,14 +4,30 @@ import './FavoritesView.css';
 import { useLocalStorage } from '../../utilities/useLocalStorage';
 
 interface FavoritesViewProps {
+  favoriteSongs: {
+    id: string,
+    artist_display_name: string,
+    title: string,
+    releasedate: string,
+    genre: string
+  }[];
   removeFavorite: Function;
 }
 
-const FavoritesView = ({removeFavorite}: FavoritesViewProps) => {
-  let storedFavs: any = useLocalStorage('favorites');
-  storedFavs = storedFavs[0];
-  if(storedFavs.length) {
-  const favorites = storedFavs.map((fav: any) => {
+
+const FavoritesView = ({favoriteSongs, removeFavorite}: FavoritesViewProps) => {
+  if (!favoriteSongs) {
+      return (
+    <section className='no-favorites'>
+      <h2>Favorites View</h2>
+      <br/>
+      <p>You currently do not have any favorite songs. <br/><br/>
+      Click the '⭐️' to add a song to your Favorites.
+      </p>
+    </section>
+   );
+  } else {
+  const favorites = favoriteSongs.map((fav: any) => {
     return (
       <Favorite
         key={`${fav.id}1`}
@@ -24,7 +40,6 @@ const FavoritesView = ({removeFavorite}: FavoritesViewProps) => {
       />
     );
   });
-  
   return (
     <section className='favorites-view'>
       <h2>Favorites View</h2>
@@ -33,17 +48,7 @@ const FavoritesView = ({removeFavorite}: FavoritesViewProps) => {
       </article>
     </section>
    );
-  } else {
-      return (
-    <section className='no-favorites'>
-      <h2>Favorites View</h2>
-      <br/>
-      <p>You currently do not have any favorite songs. <br/><br/>
-      Click the '⭐️' to add a song to your Favorites.
-      </p>
-    </section>
-   );
-  }
+  } 
 }
 
 export default FavoritesView;

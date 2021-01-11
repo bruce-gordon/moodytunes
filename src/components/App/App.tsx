@@ -7,6 +7,8 @@ import ResultsView from "../ResultsView/ResultsView";
 import FavoritesView from '../FavoritesView/FavoritesView'
 import {ISongResults, allGenres} from '../common/Types'
 import { useLocalStorage } from '../../utilities/useLocalStorage';
+import { musicNote } from '../../utilities/icons';
+
 
 function App() {
   const [userName, setUserName] = useLocalStorage("userName", '');
@@ -49,9 +51,9 @@ function App() {
     setLocalStorage(favorites);
   }
 
-  let storedFavs: any = useLocalStorage('favorites');
+  let storedFavs: any = localStorage;
   useEffect(() => {
-    storedFavs = storedFavs[0] ? storedFavs[0] : [];
+    storedFavs = storedFavs ? storedFavs : [];
     setFavoriteSongs(storedFavs);
   }, []);
 
@@ -87,7 +89,7 @@ function App() {
     <div className="App">
       <header className="app-header">
         <div id = "music-note">
-          <img className="note-img" src = "https://static.thenounproject.com/png/493888-200.png" />
+          { musicNote }
         </div>
         <h1 className="app-name">MoodyTunes</h1>
         <nav>

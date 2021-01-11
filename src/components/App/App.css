@@ -57,12 +57,13 @@ nav {
   align-items: center;
   height: 4vh;
   width: 100%;
-  background: white;
-  border: 1px solid white;
+  border: 2px solid white;
+  border-radius: 10px;
+  transition: ease-in-out .2s;
 }
 
 .nav-btn-link {
-  color: #7797F1;
+  color: white;
   width: 45%;
   font-size: 2vh;
   font-weight: bolder;
@@ -70,8 +71,9 @@ nav {
 }
 
 .nav-btn:hover {
-  background: #282c34;
-  color: #7797F1;
+  background: #e100a9;
+  color: #282c34;
+  border-color: #e100a9;
 }
 
 .app-header {
@@ -80,8 +82,7 @@ nav {
   justify-content: space-around;
   padding: 2vw 0;
   border-bottom: 2px solid white;
-  /* background-color: #7797F1; */
-  background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+  background-color: #282c34;
 }
 
 .app-name {

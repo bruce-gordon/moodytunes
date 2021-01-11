@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Favorite from '../Favorite/Favorite';
 import './FavoritesView.css';
 import { useLocalStorage } from '../../utilities/useLocalStorage';
@@ -16,6 +16,10 @@ interface FavoritesViewProps {
 
 
 const FavoritesView = ({favoriteSongs, removeFavorite}: FavoritesViewProps) => {
+  useEffect(() => {
+    document.title = `MoodyTunes - Favorites (${favoriteSongs.length})`
+  }, [])
+  
   if (favoriteSongs.length === 0) {
       return (
     <section className='no-favorites'>
@@ -36,6 +40,7 @@ const FavoritesView = ({favoriteSongs, removeFavorite}: FavoritesViewProps) => {
         title={fav.title}
         releaseDate={fav.releasedate}
         genre={fav.genre}
+        favoriteSongs={favoriteSongs}
         removeFavorite={removeFavorite}
       />
     );

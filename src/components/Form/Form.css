@@ -1,6 +1,14 @@
 form {
-  margin-left: 2vw;
-  margin-top: 2vw;
+  /* margin-left: 2vw; */
+  /* margin-top: 2vw; */
+  margin: 2em 2em;
+}
+
+.icon {
+  transition: ease-in-out .2s;
+}
+.icon:hover {
+  background-color: orange;
 }
 
 form h2 {
@@ -19,6 +27,7 @@ form h2 {
     border-radius: 15px;
     padding: 5px;
     border: solid 2px;
+    cursor: pointer;
 }
 
 .form-options p {
@@ -45,24 +54,9 @@ button a {
   justify-content: flex-end;
 }
 
-form button {
-  height: 5vh;
-  width: 7vw;
-  border-radius: 15px;
-  border: solid 2px white;
-  margin-bottom: 2em;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-}
-
-form button:hover{
-  border: 1.5px solid orange;
-   text-decoration: none;
-}
-
-form button:focus {
-  outline: none;
-}
+/* form button {
+  height: 4vh
+} */
 
 .choice {
   border: solid 2px #282c34;
@@ -82,7 +76,50 @@ p svg {
 
 .selected-choice {
   background-color: orange;
-  border: solid 1px orange;
+  color: #282c34;
+  /* border: solid 1px orange; */
   padding: 9px;
   border-radius: 15px;
+}
+
+
+.submit-link {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-content: center; */
+  margin: auto;
+  /* width: 45%; */
+  /* font-size: 2vh; */
+  width: 94%;
+  /* font-weight: bolder; */
+  text-decoration: none;
+  /* z-index: 10; */
+}
+
+.submit-link:hover {
+  /* background: #e100a9; */
+  color: #282c34;
+  /* border-color: #e100a9; */
+}
+
+.submit-button {
+  /* padding: 1em; */
+  font-size: 1.2rem;
+  font-weight: bolder;
+  height: 3em;
+  background: #282c34;
+  border: 2px solid white;
+  border-radius: 10px;
+  transition: ease-in-out .2s;
+  cursor: pointer;
+  /* z-index: 1; */
+  color:white;
+  padding: 1em;
+}
+
+.submit-button:hover {
+  background: #e100a9;
+  color: #282c34;
+  border-color: #e100a9;
 }

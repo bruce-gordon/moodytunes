@@ -8,7 +8,6 @@ import FavoritesView from '../FavoritesView/FavoritesView'
 import {ISongResults, allGenres} from '../common/Types'
 import { useLocalStorage } from '../../utilities/useLocalStorage';
 
-
 function App() {
   const [userName, setUserName] = useLocalStorage("userName", '');
   const [songResults, setSongResults] = useState([]);
@@ -28,7 +27,13 @@ function App() {
 
   const addFavorite = (id: string) => {
     type AnyType = any;
-    const favorite = songResults.find((song:ISongResults) => song.id === id) as AnyType
+//     const favorite = songResults.find(
+//       (song: ISongResults) => song.id === id
+//     ) as AnyType; // favorite needs to be set to any???
+//     setFavoriteSongs([favorite, ...favoriteSongs]); // putting these params inside an array (error expected 1 arg but got 2+)
+//   };
+
+  const favorite = songResults.find((song:ISongResults) => song.id === id) as AnyType
     if (favoriteSongs === undefined) {
       setFavoriteSongs([favorite]);
       setLocalStorage(favoriteSongs);
@@ -37,7 +42,7 @@ function App() {
       setLocalStorage([favorite, ...favoriteSongs])
     }
   }
-
+  
   const removeFavorite = (id: string) => {
     const favorites = favoriteSongs.filter((song:ISongResults) => song.id !== id) as any;
     setFavoriteSongs(favorites);
@@ -62,7 +67,8 @@ function App() {
     } else if (songResults.length) {
       return (
         <ResultsView
-          addFavorite={addFavorite} songResults={songResults}
+          addFavorite={addFavorite} songResults={songResults} favoriteSongs={favoriteSongs as any} 
+
         />
       )
     } else if (!songResults.length) {
@@ -79,14 +85,14 @@ function App() {
 
   return (
     <div className="App">
-      <header className='app-header'>
+      <header className="app-header">
         <div id = "music-note">
           <img className="note-img" src = "https://static.thenounproject.com/png/493888-200.png" />
         </div>
-        <h1 className='app-name'>MoodyTunes</h1>
+        <h1 className="app-name">MoodyTunes</h1>
         <nav>
-          <Link to='/' className='nav-btn-link'>
-            <div className='nav-btn'>Home</div>
+          <Link to="/" className="nav-btn-link">
+            <div className="nav-btn">Home</div>
           </Link>
           <Link to='/favorites' className='nav-btn-link'>
             <div className='nav-btn'>View Favorites</div>
@@ -104,12 +110,12 @@ function App() {
             />)}
         />
         <Route
-          path='/results'
+          path="/results"
           render={props => (checkSongResults())}
         />
         <Route
-          path='/'
-          render={props => (<Form getMoodyTunes={getMoodyTunes} {...props}/>)}
+          path="/"
+          render={props => <Form getMoodyTunes={getMoodyTunes} {...props} />}
         />
       </Switch>
     </div>

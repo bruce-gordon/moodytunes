@@ -7,7 +7,7 @@ const createUrl = (
   // excludedGenres: string, &genreNo=${excludedGenres}
   decade: string
 ) => {
-  return `https://thingproxy.freeboard.io/fetch/http://musicovery.com/api/V6/playlist.php?&fct=getfrommood&popularitymax=100&popularitymin=80&starttrackid=&trackvalence=${valence}&trackarousal=${arousal}&listenercountry=us&${decade}=true&resultsnumber=25&apikey=fpa8g361`;
+  return `https://pure-hollows-05817.herokuapp.com/http://musicovery.com/api/V6/playlist.php?&fct=getfrommood&popularitymax=100&popularitymin=80&starttrackid=&trackvalence=${valence}&trackarousal=${arousal}&listenercountry=us&${decade}=true&resultsnumber=25&apikey=fpa8g361`;
 };
 
 export const getTracksByMoodAPI = async (

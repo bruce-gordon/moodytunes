@@ -38,9 +38,12 @@ h3 {
 }
 
 .favoriteBtn{
-  font-size: 2vw;
-  background: none;
-  border: none;
+    font-size: 1.2em;
+    background: none;
+    border: none;
+    filter: grayscale(100%);
+    cursor: pointer;
+    transition: ease-in .1s;
 }
 
 .favoriteBtn:focus {
@@ -48,8 +51,7 @@ h3 {
 }
 
 .favoriteBtn:hover{
-  cursor: pointer;
-  font-size: 2.5vw;
+    transform: rotate(25deg);
 }
 
 .date-genre {

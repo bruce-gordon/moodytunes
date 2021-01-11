@@ -36,6 +36,7 @@ export interface ResultProps {
   title: string;
   releaseDate: string;
   genre: string;
+  favoriteSongs: Array<ISongResults>;
   addFavorite: Function;
 };
 
@@ -46,6 +47,7 @@ export interface FavoriteProps {
   title: string;
   releaseDate: string;
   genre: string;
+  favoriteSongs: Array<ISongResults>;
   removeFavorite: Function;
 };
 
@@ -57,5 +59,6 @@ export interface ResultsViewProps {
     releasedate: string;
     genre: string;
   }[];
+  favoriteSongs: Array<ISongResults>;
   addFavorite: Function;
 }

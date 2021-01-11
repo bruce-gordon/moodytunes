@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Result from "../Result/Result";
 import {ResultsViewProps} from '../common/Types'
 
-const ResultsView = ({ addFavorite, songResults }: ResultsViewProps) => {
+const ResultsView = ({ addFavorite, songResults, favoriteSongs }: ResultsViewProps) => {
+  useEffect(() => {
+    document.title = `MoodyTunes - Results (${songResults.length})`
+  }, [])
+  
   const songs = songResults.map(song => {
     return (
       <Result
@@ -12,6 +16,7 @@ const ResultsView = ({ addFavorite, songResults }: ResultsViewProps) => {
         title={song.title}
         releaseDate={song.releasedate}
         genre={song.genre}
+        favoriteSongs={favoriteSongs}
         addFavorite={addFavorite}
       />
     );
@@ -19,7 +24,7 @@ const ResultsView = ({ addFavorite, songResults }: ResultsViewProps) => {
   return (
     <section className="results-view">
       <h2 className="container-title">
-        MoodyTunes Results
+        {'{Mood}'} songs
       </h2>
       {songs}
     </section>

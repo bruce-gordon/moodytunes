@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import "./Result.css";
 import { ResultProps } from "../common/Types";
 import { gsap } from "gsap";
+import { spotify } from '../../utilities/icons';
 
 const Result = (
   {
@@ -65,11 +66,13 @@ const Result = (
   return (
     <article className="song-result" id={id}>
       <div className="song-details">
-        <button className="moodBtn">➕</button>
         <div className="title-artist">
           <h1>{songTitle}</h1>
           <h3>{artist}</h3>
         </div>
+        <button className="moodBtn">
+          {spotify}
+        </button>
         <button onClick={() => handleClick()} className={`favoriteBtn --${id}`}>
           ⭐
         </button>

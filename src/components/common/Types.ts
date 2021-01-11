@@ -27,6 +27,7 @@ export interface ISongResults {
 
 export interface FormProps {
   getMoodyTunes: Function;
+  updateMood: Function;
 }
 
 export interface ResultProps {
@@ -61,4 +62,5 @@ export interface ResultsViewProps {
   }[];
   favoriteSongs: Array<ISongResults>;
   addFavorite: Function;
+  moodName: string;
 }

@@ -15,6 +15,7 @@ function App() {
   const [songResults, setSongResults] = useState([]);
   const [favoriteSongs, setFavoriteSongs] = useState<ISongResults[]>([]); // type the return for setFavoriteSongs for the error: Type 'undefined' is not assignable to type 'never'.ts(2322)
   const [localStorage, setLocalStorage] = useLocalStorage("favorites");
+  const [moodName, setMoodName] = useState('');
 
   const getMoodyTunes = async (mood: string, decade: string) => {
     const arousal: string = mood.split(",")[0];
@@ -26,6 +27,10 @@ function App() {
     const results = await getTracksByMoodAPI(valence, arousal, decade);
     setSongResults(results);
   };
+
+  const updateMoodName = (moodWord: string) => {
+    setMoodName(moodWord);
+  }
 
   const addFavorite = (id: string) => {
     type AnyType = any;
@@ -44,7 +49,7 @@ function App() {
       setLocalStorage([favorite, ...favoriteSongs])
     }
   }
-  
+
   const removeFavorite = (id: string) => {
     const favorites = favoriteSongs.filter((song:ISongResults) => song.id !== id) as any;
     setFavoriteSongs(favorites);
@@ -69,7 +74,10 @@ function App() {
     } else if (songResults.length) {
       return (
         <ResultsView
-          addFavorite={addFavorite} songResults={songResults} favoriteSongs={favoriteSongs as any} 
+          addFavorite={ addFavorite }
+          songResults={ songResults }
+          moodName={ moodName }
+          favoriteSongs={ favoriteSongs as any }
 
         />
       )
@@ -108,7 +116,7 @@ function App() {
           <FavoritesView
             removeFavorite={removeFavorite}
             favoriteSongs={favoriteSongs} {...props}
-            
+
             />)}
         />
         <Route
@@ -117,7 +125,9 @@ function App() {
         />
         <Route
           path="/"
-          render={props => <Form getMoodyTunes={getMoodyTunes} {...props} />}
+          render={props => <Form
+          getMoodyTunes={ getMoodyTunes }
+          updateMood={ updateMoodName }{...props} />}
         />
       </Switch>
     </div>

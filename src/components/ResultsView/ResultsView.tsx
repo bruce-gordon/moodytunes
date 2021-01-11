@@ -24,7 +24,7 @@ const ResultsView = ({ addFavorite, songResults, favoriteSongs, moodName }: Resu
   return (
     <section className="results-view">
       <h2 className="container-title">
-        {moodName} song results:
+        "{moodName}" song results:
       </h2>
       {songs}
     </section>

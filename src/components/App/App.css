@@ -19,7 +19,7 @@
   position: absolute;
   animation: linear initial alternate;
   animation-name: run;
-  animation-duration: 3s;
+  animation-duration: 4s;
 }
 
 @keyframes run {

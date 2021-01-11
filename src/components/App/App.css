@@ -19,13 +19,21 @@
   position: absolute;
   animation: linear initial alternate;
   animation-name: run;
-  animation-duration: 4s;
+  animation-duration: 3s;
 }
 
 @keyframes run {
-    0% { right: -10%;}
-    100%{ right : 91%;}
-    /* 100%{ left: 0;} */
+    0% { 
+      right: -10%;
+      opacity: 0%
+    }
+    50%{ 
+      opacity: 30%;
+    }
+    100%{ 
+      right: 91%;
+      opacity: 90%;
+    }
 }
 
 .note-img {
@@ -41,6 +49,7 @@ nav {
   align-items: center;
   margin-right: -10vw;
   z-index: 1;
+  
 }
 
 .nav-btn {
@@ -72,7 +81,8 @@ nav {
   justify-content: space-around;
   padding: 2vw 0;
   border-bottom: 2px solid white;
-  background-color: #7797F1;
+  /* background-color: #7797F1; */
+  background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
 }
 
 .app-name {

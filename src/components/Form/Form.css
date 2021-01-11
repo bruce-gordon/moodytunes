@@ -4,6 +4,13 @@ form {
   margin: 2em 2em;
 }
 
+.icon {
+  transition: ease-in-out .2s;
+}
+.icon:hover {
+  background-color: orange;
+}
+
 .form-options {
   margin: 0 2vw 1vh;
     display: flex;
@@ -15,6 +22,7 @@ form {
     border-radius: 15px;
     padding: 5px;
     border: solid 2px;
+    cursor: pointer;
 }
 
 .form-options p {
@@ -45,9 +53,9 @@ button a {
     text-decoration: none;
 }
 
-form button {
+/* form button {
   height: 4vh
-}
+} */
 
 .choice {
   border: solid 2px #282c34;
@@ -69,7 +77,8 @@ p svg {
 
 .selected-choice {
   background-color: orange;
-  border: solid 1px orange;
+  color: #282c34;
+  /* border: solid 1px orange; */
   padding: 9px;
   border-radius: 15px;
 }

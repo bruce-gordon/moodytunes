@@ -46,7 +46,7 @@ function App() {
 
   let storedFavs: any = useLocalStorage('favorites');
   useEffect(() => {
-    storedFavs = storedFavs[0];
+    storedFavs = storedFavs[0] ? storedFavs[0] : [];
     setFavoriteSongs(storedFavs);
   }, []);
 

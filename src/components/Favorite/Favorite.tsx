@@ -14,7 +14,7 @@ const Favorite = ({id, artist, title, releaseDate, genre, removeFavorite}: Favor
     <article className='favorite' id={id}>
       <div className="fav-details">
         <div className="title-artist">
-          <h1>{title}</h1>
+          <h1 className="fav-title">{title}</h1>
           <h3>{artist}</h3>
         </div>
         <button onClick={() => handleClick()} className="remove-fav-btn">

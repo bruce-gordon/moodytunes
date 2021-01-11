@@ -1,7 +1,10 @@
+* {
+  border: 1px solid aqua;
+}
+
 form {
-  /* margin-left: 2vw; */
-  /* margin-top: 2vw; */
   margin: 2em 2em;
+  height: 60%;
 }
 
 .icon {
@@ -13,21 +16,22 @@ form {
 
 form h2 {
   margin-bottom: 0px;
-  margin-left: 15%;
+
+  text-align: center;
 }
 
 .form-options {
-  margin: 0 2vw 1vh 0vw;
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 70vw;
-    border-radius: 15px;
-    padding: 5px;
-    border: solid 2px;
-    cursor: pointer;
+  /* margin: 0 2vw 1vh 0vw; */
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 70vw;
+  border-radius: 15px;
+  padding: 5px;
+  border: solid 2px;
+  cursor: pointer;
 }
 
 .form-options p {
@@ -38,8 +42,13 @@ form h2 {
   padding: 9px;
 }
 
+.form-options p:hover {
+  border: solid 1px orange;
+  padding: 9px;
+}
+
 .form-subheader {
-  margin: 1vh 0 1vh 0;
+  margin: 0;
 }
 
 button a {
@@ -54,20 +63,12 @@ button a {
   justify-content: flex-end;
 }
 
-/* form button {
-  height: 4vh
-} */
-
 .choice {
   border: solid 2px #282c34;
   padding: 9px;
   border-radius: 15px;
 }
 
-.form-options p:hover {
-  border: solid 1px orange;
-  padding: 9px;
-}
 
 p svg {
   width: 6vw;
@@ -77,34 +78,25 @@ p svg {
 .selected-choice {
   background-color: orange;
   color: #282c34;
-  /* border: solid 1px orange; */
   padding: 9px;
   border-radius: 15px;
 }
 
-
 .submit-link {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-content: center; */
+  /* align-items: center; */
+
   margin: auto;
-  /* width: 45%; */
-  /* font-size: 2vh; */
-  width: 94%;
-  /* font-weight: bolder; */
   text-decoration: none;
-  /* z-index: 10; */
+  width: 94%;
 }
 
 .submit-link:hover {
-  /* background: #e100a9; */
   color: #282c34;
-  /* border-color: #e100a9; */
 }
 
 .submit-button {
-  /* padding: 1em; */
   font-size: 1.2rem;
   font-weight: bolder;
   height: 3em;
@@ -113,7 +105,6 @@ p svg {
   border-radius: 10px;
   transition: ease-in-out .2s;
   cursor: pointer;
-  /* z-index: 1; */
   color:white;
   padding: 1em;
 }

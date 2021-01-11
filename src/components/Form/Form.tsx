@@ -83,11 +83,11 @@ const handleMood = (moodNum: string, moodWord: string) => {
         <p className={ `icon ${getStylings(decade, 'date10')}` } onClick={ event => setDecade('date10')}>2010's</p><br/>
         </div>
         <br/>
-          <Link className='submit-link' to='/results'>
-            <button className='submit-button' onClick={ (event: React.MouseEvent<HTMLElement>) => handleClick(event as any) }>
-              Get Songs
-            </button>
-          </Link>
+        <Link className='submit-link' to='/results'>
+          <button className='submit-button' onClick={ (event: React.MouseEvent<HTMLElement>) => handleClick(event as any) }>
+            Get Songs
+          </button>
+        </Link>
       </form>
     </div>
    );

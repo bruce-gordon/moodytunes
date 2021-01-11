@@ -16,7 +16,7 @@ interface FavoritesViewProps {
 
 
 const FavoritesView = ({favoriteSongs, removeFavorite}: FavoritesViewProps) => {
-  if (!favoriteSongs) {
+  if (!favoriteSongs || favoriteSongs.length === 0) {
       return (
     <section className='no-favorites'>
       <h2>Favorites View</h2>

@@ -71,6 +71,9 @@ function App() {
   return (
     <div className="App">
       <header className='app-header'>
+        <div id = "music-note">
+          <img className="note-img" src = "https://static.thenounproject.com/png/493888-200.png" />
+        </div>
         <h1 className='app-name'>MoodyTunes</h1>
         <nav>
           <Link to='/' className='nav-btn-link'>

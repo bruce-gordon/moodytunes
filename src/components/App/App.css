@@ -10,12 +10,37 @@
   width: auto;
 }
 
+#music-note {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  right: 91vw;
+  top: .5%;
+  position: absolute;
+  animation: linear initial alternate;
+  animation-name: run;
+  animation-duration: 4s;
+}
+
+@keyframes run {
+    0% { right: 0;}
+    100%{ right : 91%;}
+    /* 100%{ left: 0;} */
+}
+
+.note-img {
+  width: 8vw;
+  height: 11vh;
+  /* left: 1px; */
+}
+
 nav {
   width: 25%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-right: -10vw;
+  z-index: 1;
 }
 
 .nav-btn {
@@ -54,4 +79,5 @@ nav {
   font-size: 1.5em;
   font-style: italic;
   margin-left: -10vw;
+  z-index: 1;
 }

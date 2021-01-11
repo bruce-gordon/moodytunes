@@ -41,8 +41,11 @@ const Result = ({
     tl.to(`.${"--" + id}`, { duration: 0.1, translateY: 3 })
       .to(`.${"--" + id}`, { duration: 0.3, rotateY: 360, translateY: -10 })
       .to(`.${"--" + id}`, { duration: 0.3, translateY: 0 })
-      .to(`.${"--" + id}`, { duration: 0.2, filter: "grayscale(0%)" }, "-=.4");
-    gsap.set(`.${"--" + id}`, { rotateY: 0, translateY: 0 });
+      .to(`.${"--" + id}`, { duration: 0.2, filter: "grayscale(0%)", cursor: 'default' }, "-=.4")
+      .to(`.title-artist-${id}`, { duration: '0.2 !important', color: 'rgb(253,235,103)' }, "-=.4")
+      .to(`.badge-${id}`, { borderColor:'rgb(253,235,103)', backgroundColor: 'rgb(253,235,103)', color:'rgb(40,44,52)' }, "<")
+      .to(`.card-${id}`, { border: 'solid 3px rgb(253,235,103)' }, "<");
+      gsap.set(`.${"--" + id}`, { rotateY: 0, translateY: 0 });
 
     setInFavorites(true);
   };
@@ -70,9 +73,9 @@ const Result = ({
     .join(" ");
 
   return (
-    <article className="song-result" id={id}>
+    <article className={`song-result card-${id}`} id={id}>
       <div className="song-details">
-        <div className="title-artist">
+        <div className={`title-artist title-artist-${id}`}>
           <h1>{songTitle}</h1>
           <h3>{artist}</h3>
         </div>
@@ -88,12 +91,12 @@ const Result = ({
         </div>
       </div>
       <div className="date-genre">
-        <span className='badge'>
+        <span className={`badge badge-${id}`}>
           <p>
             <b>Release Date:</b> {releaseDate}
           </p>
         </span>
-        <span className='badge'>
+        <span className={`badge badge-${id}`}>
           <p>
             <b>Genre:</b> {genreTitle}
           </p>

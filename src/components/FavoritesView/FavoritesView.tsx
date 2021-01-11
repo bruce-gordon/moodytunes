@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import Favorite from '../Favorite/Favorite';
 import './FavoritesView.css';
-import { useLocalStorage } from '../../utilities/useLocalStorage';
 
 interface FavoritesViewProps {
   favoriteSongs: {

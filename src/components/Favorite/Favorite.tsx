@@ -7,7 +7,9 @@ const Favorite = ({id, artist, title, releaseDate, genre, removeFavorite}: Favor
   const handleClick = () => {
     removeFavorite(id);
   }
-
+  let genreTitle = genre.split(' ')
+    .map((word) => word.charAt(0).toUpperCase() + word.substring(1))
+    .join(' ');
   return (
     <article className='favorite' id={id}>
       <div className="fav-details">
@@ -24,7 +26,7 @@ const Favorite = ({id, artist, title, releaseDate, genre, removeFavorite}: Favor
           <b>Release Date:</b> {releaseDate}
         </p>
         <p>
-          <b>Genre:</b> {genre}
+          <b>Genre:</b> {genreTitle}
         </p>
       </div>
     </article>

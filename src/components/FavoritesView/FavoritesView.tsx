@@ -12,7 +12,7 @@ interface FavoritesViewProps {
 const FavoritesView = ({removeFavorite}: FavoritesViewProps) => {
   let storedFavs: any = useLocalStorage('favorites');
   storedFavs = storedFavs[0];
-  if(storedFavs) {
+  if(storedFavs.length) {
   const favorites = storedFavs.map((fav: any) => {
     return (
       <Favorite
@@ -26,10 +26,13 @@ const FavoritesView = ({removeFavorite}: FavoritesViewProps) => {
       />
     );
   });
+  
   return (
     <section className='favorites-view'>
       <h2>Favorites View</h2>
-      { favorites }
+      <article className='favs-container'>
+        { favorites }
+      </article>
     </section>
    );
   } else {

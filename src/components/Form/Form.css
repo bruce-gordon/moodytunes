@@ -45,8 +45,18 @@ button a {
     text-decoration: none;
 }
 
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
 form button {
-  height: 4vh
+  height: 5vh;
+  border-radius: 15px;
+  border: solid 2px orange;
+  margin-bottom: 2em;
+  text-decoration: none;
 }
 
 .choice {

@@ -3,11 +3,9 @@ import Favorite from '../Favorite/Favorite';
 import './FavoritesView.css';
 import { useLocalStorage } from '../../utilities/useLocalStorage';
 
-
 interface FavoritesViewProps {
   removeFavorite: Function;
 }
-
 
 const FavoritesView = ({removeFavorite}: FavoritesViewProps) => {
   let storedFavs: any = useLocalStorage('favorites');

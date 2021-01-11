@@ -9,8 +9,7 @@ const Form = ({ getMoodyTunes }: FormProps) => {
   const [decade, setDecade] = useState('');
 
   const handleClick = (event: MouseEvent) => {
-    event.preventDefault();
-
+    // event.preventDefault();
     getMoodyTunes(mood, decade);
   }
 
@@ -73,9 +72,12 @@ const getStylings = (selector:string, elementId:string) => {
         <p className={ getStylings(decade, 'date10') } onClick={ event => setDecade('date10')}>2010's</p><br/>
         </div>
         <br/>
-        <button onClick={ (event: React.MouseEvent<HTMLElement>) => handleClick(event as any) }>
-          <Link to='/results'>Get Songs</Link>
-        </button>
+          <Link className='submit-link' to='/results'>
+            <button className='submit-button' onClick={ (event: React.MouseEvent<HTMLElement>) => handleClick(event as any) }>
+              Get Songs
+            </button>
+          </Link>
+        
 
       </form>
     </div>

@@ -11,8 +11,13 @@ form {
   background-color: orange;
 }
 
+form h2 {
+  margin-bottom: 0px;
+  margin-left: 15%;
+}
+
 .form-options {
-  margin: 0 2vw 1vh;
+  margin: 0 2vw 1vh 0vw;
     display: flex;
     align-items: baseline;
     flex-wrap: wrap;
@@ -37,20 +42,16 @@ form {
   margin: 1vh 0 1vh 0;
 }
 
-form article {
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    width: auto;
-    border-radius: 15px;
-    padding: 10px;
-    border: solid 2px;
+button a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }
 
-button a {
-    text-decoration: none;
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 /* form button {
@@ -62,8 +63,6 @@ button a {
   padding: 9px;
   border-radius: 15px;
 }
-
-
 
 .form-options p:hover {
   border: solid 1px orange;

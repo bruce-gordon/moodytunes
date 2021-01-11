@@ -21,11 +21,6 @@ const Result = (
     // updateFavoriteStatus()
     }, [])
 
-  let songTitle: string = title
-    .split(" ")
-    .map(word => word.charAt(0).toUpperCase() + word.substring(1))
-    .join(" ");
-
   const checkFavoriteStatus = () => {
     const match = favoriteSongs.find(song => song.id === id)
     if (match) {
@@ -58,6 +53,14 @@ const Result = (
       animateAddFavorite();
     }
   };
+  
+  let songTitle = title.split(' ')
+    .map((word) => word.charAt(0).toUpperCase() + word.substring(1))
+    .join(' ');
+  
+  let genreTitle = genre.split(' ')
+    .map((word) => word.charAt(0).toUpperCase() + word.substring(1))
+    .join(' ');
 
   return (
     <article className="song-result" id={id}>
@@ -76,7 +79,7 @@ const Result = (
           <b>Release Date:</b> {releaseDate}
         </p>
         <p>
-          <b>Genre:</b> {genre}
+          <b>Genre:</b> {genreTitle}
         </p>
       </div>
     </article>

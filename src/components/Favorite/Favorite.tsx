@@ -5,15 +5,19 @@ import './Favorite.css';
 const Favorite = ({id, artist, title, releaseDate, genre, removeFavorite}: FavoriteProps) => {
 
   const handleClick = () => {
-    console.log("handleclick");
     removeFavorite(id);
   }
-
+  let songTitle = title.split(' ')
+    .map((word) => word.charAt(0).toUpperCase() + word.substring(1))
+    .join(' ');
+  let genreTitle = genre.split(' ')
+    .map((word) => word.charAt(0).toUpperCase() + word.substring(1))
+    .join(' ');
   return (
     <article className='favorite' id={id}>
       <div className="fav-details">
         <div className="title-artist">
-          <h1>{title}</h1>
+          <h1 className="fav-title">{songTitle}</h1>
           <h3>{artist}</h3>
         </div>
         <button onClick={() => handleClick()} className="remove-fav-btn">
@@ -25,7 +29,7 @@ const Favorite = ({id, artist, title, releaseDate, genre, removeFavorite}: Favor
           <b>Release Date:</b> {releaseDate}
         </p>
         <p>
-          <b>Genre:</b> {genre}
+          <b>Genre:</b> {genreTitle}
         </p>
       </div>
     </article>

@@ -9,7 +9,6 @@ const Form = ({ getMoodyTunes }: FormProps) => {
   const [decade, setDecade] = useState('');
 
   const handleClick = (event: MouseEvent) => {
-    // event.preventDefault();
     getMoodyTunes(mood, decade);
   }
 
@@ -77,8 +76,6 @@ const getStylings = (selector:string, elementId:string) => {
               Get Songs
             </button>
           </Link>
-        
-
       </form>
     </div>
    );

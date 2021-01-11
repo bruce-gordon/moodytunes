@@ -41,6 +41,13 @@ function App() {
     setState(favoriteSongs);
   }
 
+  let storedFavs: any = useLocalStorage('favorites');
+  useEffect(() => {
+    storedFavs = storedFavs[0];
+    setFavoriteSongs(storedFavs);
+    console.log('fs', favoriteSongs)
+  }, []);
+
   const checkSongResults = () => {
     if (!songResults) {
       return (

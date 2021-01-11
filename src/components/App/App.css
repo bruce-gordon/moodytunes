@@ -14,12 +14,14 @@
   display: flex;
   flex-direction: row;
   /* position: relative; */
-  right: 91vw;
+  right: 96vw;
   top: .9%;
   position: absolute;
   animation: linear initial alternate;
   animation-name: run;
   animation-duration: 4s;
+  width: 4em;
+  height: 4.2em;
 }
 
 @keyframes run {
@@ -31,14 +33,9 @@
       opacity: 30%;
     }
     100%{ 
-      right: 91%;
+      right: 96%;
       opacity: 90%;
     }
-}
-
-.note-img {
-  width: 4em;
-  height: 3.7em;
 }
 
 nav {

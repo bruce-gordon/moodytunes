@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {FormProps} from '../common/Types';
 import './Form.css';
-import { angry, sad, happy, content } from '../../utilities/icons';
+import { angry, sad, happy, content, amorous, excited } from '../../utilities/icons';
 
 const Form = ({ getMoodyTunes }: FormProps) => {
   const [mood, setMood] = useState('');
@@ -15,7 +15,7 @@ const Form = ({ getMoodyTunes }: FormProps) => {
 
 const getStylings = (selector:string, elementId:string) => {
   let className = selector === elementId ? 'selected-choice' : 'choice';
-  return className 
+  return className
 }
 
   return (
@@ -26,25 +26,30 @@ const getStylings = (selector:string, elementId:string) => {
         <p className='form-subheader'>Please select your <b>Mood</b>:</p>
         <br/>
         <div className='form-options'>
-          <p className= { `icon ${getStylings(mood, '660000,950000')}` } onClick={ event => setMood('660000,950000') }>
+          <p className= { `icon ${getStylings(mood, '580000,950000')}` } onClick={ event => setMood('580000,950000') }>
           { happy }
           Happy
           </p>
-           <p className= { `icon ${getStylings(mood, '235000,91000')}` } onClick={ event => setMood('235000,91000') }>
+          <p className= { `icon ${getStylings(mood, '235000,91000')}` } onClick={ event => setMood('235000,91000') }>
             { sad }
           Sad
           </p>
-           <p className= { `icon ${getStylings(mood, '100000,900000')}` } onClick={ event => setMood('100000,900000') }>
+          <p className= { `icon ${getStylings(mood, '100000,900000')}` } onClick={ event => setMood('100000,900000') }>
           { content }
           Content
           </p>
-           <p className= { `icon ${getStylings(mood, '895000,295000')}` } onClick={ event => setMood('895000,295000') }>
+          <p className= { `icon ${getStylings(mood, '925000, 607500')}` } onClick={ event => setMood('925000, 607500') }>
+          { amorous }
+          Amorous
+          </p>
+          <p className= { `icon ${getStylings(mood, '862500, 850000')}` } onClick={ event => setMood('862500, 850000') }>
+          { excited }
+          Excited
+          </p>
+          <p className= { `icon ${getStylings(mood, '895000,295000')}` } onClick={ event => setMood('895000,295000') }>
           { angry }
           Angry
           </p>
-           {/* <p className= { getStylings(mood, '900000,900000') } onClick={ event => setMood('900000,300000') }>
-          Enraged
-          </p> */}
         </div>
         <br/>
         {/* <p className='form-subheader'>Please select a <b>Genre</b>:</p>
@@ -83,5 +88,3 @@ const getStylings = (selector:string, elementId:string) => {
 }
 
 export default Form;
-
-

@@ -7,6 +7,9 @@ const Favorite = ({id, artist, title, releaseDate, genre, removeFavorite}: Favor
   const handleClick = () => {
     removeFavorite(id);
   }
+  let songTitle = title.split(' ')
+    .map((word) => word.charAt(0).toUpperCase() + word.substring(1))
+    .join(' ');
   let genreTitle = genre.split(' ')
     .map((word) => word.charAt(0).toUpperCase() + word.substring(1))
     .join(' ');
@@ -14,7 +17,7 @@ const Favorite = ({id, artist, title, releaseDate, genre, removeFavorite}: Favor
     <article className='favorite' id={id}>
       <div className="fav-details">
         <div className="title-artist">
-          <h1 className="fav-title">{title}</h1>
+          <h1 className="fav-title">{songTitle}</h1>
           <h3>{artist}</h3>
         </div>
         <button onClick={() => handleClick()} className="remove-fav-btn">

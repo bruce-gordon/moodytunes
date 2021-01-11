@@ -46,16 +46,16 @@ h3 {
     border: none;
 } */
 .favoriteBtn{
-    font-size: 1rem;
+    font-size: 1.2em;
     background: none;
     border: none;
     filter: grayscale(100%);
     cursor: pointer;
+    transition: ease-in .1s;
 }
-/* .favoriteBtn:hover{
-  cursor: pointer;
-  font-size: 2.5vw;
-} */
+.favoriteBtn:hover{
+    transform: rotate(25deg);
+}
 
 .date-genre {
     display: flex;

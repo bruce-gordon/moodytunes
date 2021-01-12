@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/moodytunes/static/css/main.a14a72ed.chunk.css",
+    "main.js": "/moodytunes/static/js/main.bd5739e0.chunk.js",
+    "main.js.map": "/moodytunes/static/js/main.bd5739e0.chunk.js.map",
+    "runtime-main.js": "/moodytunes/static/js/runtime-main.4b8a5423.js",
+    "runtime-main.js.map": "/moodytunes/static/js/runtime-main.4b8a5423.js.map",
+    "static/js/2.309242a7.chunk.js": "/moodytunes/static/js/2.309242a7.chunk.js",
+    "static/js/2.309242a7.chunk.js.map": "/moodytunes/static/js/2.309242a7.chunk.js.map",
+    "index.html": "/moodytunes/index.html",
+    "static/css/main.a14a72ed.chunk.css.map": "/moodytunes/static/css/main.a14a72ed.chunk.css.map",
+    "static/js/2.309242a7.chunk.js.LICENSE.txt": "/moodytunes/static/js/2.309242a7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4b8a5423.js",
+    "static/js/2.309242a7.chunk.js",
+    "static/css/main.a14a72ed.chunk.css",
+    "static/js/main.bd5739e0.chunk.js"
+  ]
+}

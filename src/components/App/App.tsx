@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Form from "../Form/Form";
 import "./App.css";
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { getTracksByMoodAPI } from "../../utilities/apiCalls";
 import ResultsView from "../ResultsView/ResultsView";
 import FavoritesView from '../FavoritesView/FavoritesView'
 import {ISongResults, allGenres} from '../common/Types'
 import { useLocalStorage } from '../../utilities/useLocalStorage';
-import { musicNote } from '../../utilities/icons';
-
+import NavBar from '../NavBar/NavBar';
 
 function App() {
   const [userName, setUserName] = useLocalStorage("userName", '');
@@ -95,20 +94,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="app-header">
-        <div id = "music-note">
-          { musicNote }
-        </div>
-        <h1 className="app-name">MoodyTunes</h1>
-        <nav>
-          <Link to="/" className="nav-btn-link">
-            <div className="nav-btn">Home</div>
-          </Link>
-          <Link to='/favorites' className='nav-btn-link'>
-            <div className='nav-btn'>View Favorites</div>
-          </Link>
-        </nav>
-      </header>
+      <NavBar />
       <Switch>
         <Route
           path='/favorites'

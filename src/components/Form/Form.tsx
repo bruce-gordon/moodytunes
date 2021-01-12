@@ -25,8 +25,13 @@ const handleMood = (moodNum: string, moodWord: string) => {
 }
 
 const disableLink = () => {
-  let className = mood ? 'submit-link' : 'disabled-link';
-  return className
+  let isDisabled = mood ? 'submit-link' : 'disabled-link';
+  return isDisabled
+}
+
+const showActive = () => {
+  let isActive = mood ? 'submit-button' : 'submit-button-inactive';
+  return isActive
 }
 
   return (
@@ -77,10 +82,10 @@ const disableLink = () => {
         </div>
         <br/>
         <Link
-          className={disableLink()}
+          className={ disableLink() }
           to='/results'>
           <button
-            className='submit-button'
+            className={ showActive() }
             onClick={ (event: React.MouseEvent<HTMLElement>) => handleClick(event as any) }>
             Get Songs
           </button>

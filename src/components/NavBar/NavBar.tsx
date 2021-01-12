@@ -5,13 +5,30 @@ import './NavBar.css';
 function NavBar() {
     return (
         <header className="app-header">
-        <div id = "music-note">
+        <div className="music-note" id="note-one">
           { musicNote }
+        </div>
+         <div className="music-note" id="note-two">
+          { musicNote }
+        </div>
+        <div className="music-note" id="note-three">          
+        { musicNote }
+        </div>
+        <div className="music-note" id="note-four">          
+        { musicNote }
+        </div>
+        <div className="music-note" id="note-five">          
+        { musicNote }
+        </div>
+        <div className="music-note" id="note-six">          
+        { musicNote }
+        </div>
+        <div className="music-note" id="note-seven">          
+        { musicNote }
         </div>
         <Link to="/" className="app-name-link">
             <h1 className="app-name">MoodyTunes</h1>
           </Link>
-        {/* <h1 className="app-name">MoodyTunes</h1> */}
         <nav>
           <Link to="/" className="nav-btn-link">
             <div className="nav-btn">Home</div>

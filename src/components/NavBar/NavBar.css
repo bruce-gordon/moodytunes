@@ -1,25 +1,136 @@
-
-#music-note {
+.music-note {
   display: flex;
   flex-direction: row;
-  /* position: relative; */
-  right: 96vw;
   top: .9%;
   position: absolute;
   animation: linear initial alternate;
   animation-name: run;
-  animation-duration: 4s;
+  animation-duration: 2s;
   width: 4em;
   height: 4.2em;
 }
 
+#note-one{
+    right: 96vw;
+    animation: linear initial alternate;
+    animation-name: run;
+}
+#note-two{
+    right: 96vw;
+    animation: linear initial alternate;
+    animation-name: spill;
+}
+#note-three{
+    right: 96vw;
+    animation: linear initial alternate;
+    animation-name: spill-two;
+}
+#note-four{
+    right: 96vw;
+    animation: linear initial alternate;
+    animation-name: spill-three;
+}
+#note-five{
+    right: 96vw;
+    animation: linear initial alternate;
+    animation-name: spill-four;
+}
+#note-six{
+    right: 96vw;
+    animation: linear initial alternate;
+    animation-name: spill-five;
+}
+#note-seven{
+    right: 96vw;
+    animation: linear initial alternate;
+    animation-name: spill-six;
+}
+
 @keyframes run {
     0% { 
-      right: -10%;
+      right: 0%;
       opacity: 0%
     }
     50%{ 
-      opacity: 30%;
+      opacity: 10%;
+    }
+    100%{ 
+      right: 96%;
+      opacity: 90%;
+    }
+}
+@keyframes spill {
+    0% { 
+      right: -20%;
+      opacity: 0%
+    }
+    50%{ 
+      opacity: 10%;
+    }
+    100%{ 
+      right: 96%;
+      opacity: 90%;
+    }
+}
+@keyframes spill-two {
+    0% { 
+      right: -40%;
+      opacity: 0%
+    }
+    50%{ 
+      opacity: 10%;
+    }
+    100%{ 
+      right: 96%;
+      opacity: 90%;
+    }
+}
+@keyframes spill-three {
+    0% { 
+      right: -60%;
+      opacity: 0%
+    }
+    50%{ 
+      opacity: 10%;
+    }
+    100%{ 
+      right: 96%;
+      opacity: 90%;
+    }
+}
+@keyframes spill-four {
+    0% { 
+      right: -80%;
+      opacity: 0%
+    }
+    50%{ 
+      opacity: 10%;
+    }
+    100%{ 
+      right: 96%;
+      opacity: 90%;
+    }
+}
+@keyframes spill-five {
+    0% { 
+      right: -100%;
+      opacity: 0%
+    }
+    50%{ 
+      opacity: 10%;
+    }
+    100%{ 
+      right: 96%;
+      opacity: 90%;
+    }
+}
+@keyframes spill-six {
+    0% { 
+      right: -120%;
+      opacity: 0%
+    }
+    50%{ 
+      opacity: 10%;
     }
     100%{ 
       right: 96%;
@@ -42,8 +153,8 @@ nav {
   justify-content: center;
   align-items: center;
   height: 4vh;
-  font-size: .5em;
-  max-width: 100%;
+  font-size: .8em;
+  width: 100%;
   border: 2px solid white;
   border-radius: 10px;
   transition: ease-in-out .2s;
@@ -52,7 +163,6 @@ nav {
 .nav-btn-link {
   color: white;
   width: 45%;
-  font-size: 2vh;
   font-weight: bolder;
   text-decoration: none;
 }
@@ -66,6 +176,7 @@ nav {
 .app-header {
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-around;
   padding: 2vw 0;
   border-bottom: 2px solid white;

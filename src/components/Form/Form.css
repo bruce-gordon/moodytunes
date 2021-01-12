@@ -1,6 +1,9 @@
 form {
   margin: 2em 2em;
   height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .icon {
@@ -92,17 +95,17 @@ p svg {
 }
 
 .submit-button {
-  font-size: 1.8rem;
+  font-size: 1.3em;
   font-weight: bolder;
-  height: 2em;
-  width: 40%;
+  height: fit-content;
+  width: fit-content;
   background: #282c34;
   border: 2px solid white;
   border-radius: 10px;
   transition: ease-in-out .2s;
   cursor: pointer;
-  color:white;
-  padding: 0;
+  color: white;
+  padding: .5em;
 }
 
 .submit-button:hover {

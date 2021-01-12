@@ -20,7 +20,7 @@ describe("App", () => {
       </MemoryRouter>
     );
     const navHome = screen.getByRole('link', { name: /home/i })
-    const navFav = screen.getByRole('link', { name: /go to favorites/i })
+    const navFav = screen.getByRole('link', { name: /favorites/i })
     const heading = screen.getByRole('heading', { name: /moodytunes/i })
     const prompt = screen.getByRole('heading', { name: /generate a list of songs that fit your mood\./i })
     expect(prompt).toBeInTheDocument()
@@ -36,7 +36,7 @@ describe("App", () => {
       </MemoryRouter>
     );
     
-    const favHeading = screen.getByRole('heading', { name: /favorites view/i })
+    const favHeading = screen.getByRole('link', { name: /favorites/i })
     expect(favHeading).toBeInTheDocument()
   });
 
@@ -61,7 +61,7 @@ describe("App", () => {
       </MemoryRouter>
     );
     
-    const navFav = screen.getByRole('link', { name: /go to favorites/i })
+    const navFav = screen.getByRole('link', { name: /favorites/i })
     userEvent.click(navFav)
 
     const favHeading = screen.getByRole('heading', { name: /favorites view/i })

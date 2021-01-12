@@ -160,7 +160,7 @@ Pleasantly simple to implement! Search functionality is a twofold process. The `
 [GitHub Profile](https://github.com/demaceo)
 
 <h4>Bruce Gordon</h4>
-<img src="" alt="Bruce Gordon"
+<img src="file:///Users/wolf/Desktop/IMG_9658%202.jpg" alt="Bruce Gordon"
  width="150" height="auto" style="float: left" />
 
 [GitHub Profile](https://github.com/bruce-gordon)

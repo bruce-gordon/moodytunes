@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import Result from "../Result/Result";
 import {ResultsViewProps} from '../common/Types'
 
-const ResultsView = ({ addFavorite, songResults, favoriteSongs }: ResultsViewProps) => {
+const ResultsView = ({ addFavorite, songResults, favoriteSongs, moodName }: ResultsViewProps) => {
   useEffect(() => {
     document.title = `MoodyTunes - Results (${songResults.length})`
   }, [])
-  
+
   const songs = songResults.map(song => {
     return (
       <Result
@@ -24,7 +24,7 @@ const ResultsView = ({ addFavorite, songResults, favoriteSongs }: ResultsViewPro
   return (
     <section className="results-view">
       <h2 className="container-title">
-        {'{Mood}'} songs
+        "{moodName}" song results:
       </h2>
       {songs}
     </section>

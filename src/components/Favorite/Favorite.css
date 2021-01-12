@@ -22,15 +22,15 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-} 
+}
 
 .title-artist {
   margin-left: .3vw;
-} 
+}
 
 .fav-title {
   font-size: .8em;
-} 
+}
 
 .favorite {
     display: flex;
@@ -50,7 +50,7 @@
 }
 
 .favorite:hover {
-  background: #FF8367;
+  /* background: #FF8367; */
+  background: orange;
   color: #364259;
 }
-

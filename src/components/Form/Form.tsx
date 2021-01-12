@@ -2,20 +2,26 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {FormProps} from '../common/Types';
 import './Form.css';
-import { angry, sad, happy, content } from '../../utilities/icons';
+import { angry, sad, happy, chill, amorous, excited } from '../../utilities/icons';
 
-const Form = ({ getMoodyTunes }: FormProps) => {
+const Form = ({ getMoodyTunes, updateMood }: FormProps) => {
   const [mood, setMood] = useState('');
-  // const [genre, setGenre] = useState('');
+  const [moodName, setMoodName] = useState('');
   const [decade, setDecade] = useState('');
 
   const handleClick = (event: MouseEvent) => {
     getMoodyTunes(mood, decade);
+    updateMood(moodName)
   }
 
 const getStylings = (selector:string, elementId:string) => {
   let className = selector === elementId ? 'selected-choice' : 'choice';
-  return className 
+  return className
+}
+
+const handleMood = (moodNum: string, moodWord: string) => {
+  setMood(moodNum);
+  setMoodName(moodWord);
 }
 
   return (
@@ -26,25 +32,30 @@ const getStylings = (selector:string, elementId:string) => {
         <p className='form-subheader'>Please select your <b>Mood</b>:</p>
         <br/>
         <div className='form-options'>
-          <p className= { `icon ${getStylings(mood, '660000,950000')}` } onClick={ event => setMood('660000,950000') }>
+          <p className= { `icon ${getStylings(mood, '580000,950000')}` } onClick={ event => handleMood('580000,950000', 'Happy') }>
           { happy }
           Happy
           </p>
-           <p className= { `icon ${getStylings(mood, '235000,91000')}` } onClick={ event => setMood('235000,91000') }>
+          <p className= { `icon ${getStylings(mood, '235000,91000')}` } onClick={ event => handleMood('235000,91000', 'Sad') }>
             { sad }
           Sad
           </p>
-           <p className= { `icon ${getStylings(mood, '100000,900000')}` } onClick={ event => setMood('100000,900000') }>
-          { content }
-          Content
+          <p className= { `icon ${getStylings(mood, '100000,900000')}` } onClick={ event => handleMood('100000,900000', 'Chill') }>
+          { chill }
+          Chill
           </p>
-           <p className= { `icon ${getStylings(mood, '895000,295000')}` } onClick={ event => setMood('895000,295000') }>
+          <p className= { `icon ${getStylings(mood, '925000, 607500')}` } onClick={ event => handleMood('925000, 607500', 'Amorous') }>
+          { amorous }
+          Amorous
+          </p>
+          <p className= { `icon ${getStylings(mood, '862500, 850000')}` } onClick={ event => handleMood('862500, 850000', 'Excited') }>
+          { excited }
+          Excited
+          </p>
+          <p className= { `icon ${getStylings(mood, '895000,295000')}` } onClick={ event => handleMood('895000,295000', 'Angry') }>
           { angry }
           Angry
           </p>
-           {/* <p className= { getStylings(mood, '900000,900000') } onClick={ event => setMood('900000,300000') }>
-          Enraged
-          </p> */}
         </div>
         <br/>
         {/* <p className='form-subheader'>Please select a <b>Genre</b>:</p>
@@ -72,16 +83,14 @@ const getStylings = (selector:string, elementId:string) => {
         <p className={ `icon ${getStylings(decade, 'date10')}` } onClick={ event => setDecade('date10')}>2010's</p><br/>
         </div>
         <br/>
-          <Link className='submit-link' to='/results'>
-            <button className='submit-button' onClick={ (event: React.MouseEvent<HTMLElement>) => handleClick(event as any) }>
-              Get Songs
-            </button>
-          </Link>
+        <Link className='submit-link' to='/results'>
+          <button className='submit-button' onClick={ (event: React.MouseEvent<HTMLElement>) => handleClick(event as any) }>
+            Get Songs
+          </button>
+        </Link>
       </form>
     </div>
    );
 }
 
 export default Form;
-
-

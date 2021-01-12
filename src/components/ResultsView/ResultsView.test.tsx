@@ -1,7 +1,8 @@
 import "@testing-library/jest-dom";
-import { render, screen, waitFor } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { render, screen } from "@testing-library/react";
 import ResultsView from "./ResultsView";
+import {fakeSearchResults, fakeFavorites } from '../common/testData'
+
 
 describe("ResultsView", () => {
   it("Should render Result components", () => {
@@ -9,19 +10,18 @@ describe("ResultsView", () => {
     
     render(
       <ResultsView
-        songResults={[{
-          id: '1',
-          artist_display_name: 'some artist',
-          title: 'some title',
-          releasedate: '1983',
-          genre: 'hip hop'
-        }]}
+        songResults={fakeSearchResults}
         addFavorite={mockAddFavorite}
+        moodName={ 'Content' }
+        favoriteSongs={ fakeFavorites }
       />
     );
-    expect(screen.getByText("some artist")).toBeInTheDocument();
-    expect(screen.getByText("some title")).toBeInTheDocument();
-    expect(screen.getByText("1983")).toBeInTheDocument();
-    expect(screen.getByText("hip hop")).toBeInTheDocument();
+    const mood = screen.getByRole('heading', { name: /"content" song results:/i })
+
+    expect(mood).toBeInTheDocument();
+    expect(screen.getByText("John Lennon")).toBeInTheDocument();
+    expect(screen.getByText("Real Love")).toBeInTheDocument();
+    expect(screen.getAllByText("1988")[0]).toBeInTheDocument();
+    expect(screen.getAllByText("Pop")[0]).toBeInTheDocument();
   });
-});
+}); 

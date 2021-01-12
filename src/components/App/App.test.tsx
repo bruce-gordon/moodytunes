@@ -134,7 +134,7 @@ describe("App", () => {
     expect(songTitle1).toBeInTheDocument()
   });
   
-  it("Should remove favorite after clicking remove on Favorite component", async () => {
+  it("Should remove favorite after clicking remove on Favorite component", () => {
     render(
       <MemoryRouter initialEntries={[ '/favorites' ]} >
         <App />
@@ -147,6 +147,48 @@ describe("App", () => {
     const removeBtn = screen.getAllByRole("button", { name: /remove/i });
     userEvent.click(removeBtn[0]);
     expect(songTitle1).not.toBeInTheDocument()
+  });
+
+  it("Should open new window w/clicking spotify icon on Favorite component", () => {
+    global.open = jest.fn();
+    
+    render(
+      <MemoryRouter initialEntries={[ '/favorites' ]} >
+        <App />
+      </MemoryRouter>
+    );
+    
+    const songTitle1 = screen.getByRole('heading', { name: /what kind of love are you on/i })
+    const spotifyBtn = screen.getAllByTestId('spotify')
+
+    expect(songTitle1).toBeInTheDocument();
+    expect(spotifyBtn[0]).toBeInTheDocument();
+    
+    userEvent.click(spotifyBtn[0]);
+    expect(global.open).toHaveBeenCalled();
+  });
+  
+  it("Should open new window w/clicking spotify icon on Result component", async () => {
+    global.open = jest.fn();
+    
+    render(
+      <MemoryRouter initialEntries={[ '/' ]} >
+        <App />
+      </MemoryRouter>
+    );
+    
+    const mood6 = screen.getByText('Angry')
+    const the90s = screen.getByText("1990's");
+    const submitButton = screen.getByRole('button', { name: /get songs/i });
+    userEvent.click(mood6);
+    userEvent.click(the90s);
+    userEvent.click(submitButton);
+
+    const spotifyBtn = await waitFor(() => screen.getAllByTestId('spotify'))
+    expect(spotifyBtn[0]).toBeInTheDocument();
+    
+    userEvent.click(spotifyBtn[0]);
+    expect(global.open).toHaveBeenCalled();
   });
 
 });

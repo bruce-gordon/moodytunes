@@ -7,29 +7,39 @@ import {
 import App from "./App";
 import "@testing-library/jest-dom";
 import { getTracksByMoodAPI } from "../../utilities/apiCalls";
+jest.mock('../../utilities/apiCalls', () => ({getTracksByMoodAPI: jest.fn()}));
 import { MemoryRouter, BrowserRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
-jest.mock("../../utilities/apiCalls");
-import {fakeSearchResults, testSong, testDuplicateSong} from '../common/testData'
+import {fakeSearchResults, testSong, testDuplicateSong, fakeAPIResults, fakeFavorites2} from '../common/testData'
+import { TypeOfExpression } from "typescript";
+import { useState } from "react";
 
 describe("App", () => {
+  beforeEach(() => {
+    const mockedGetTracksByMoodAPI = getTracksByMoodAPI as jest.MockedFunction<typeof getTracksByMoodAPI>;
+    mockedGetTracksByMoodAPI.mockResolvedValue(fakeAPIResults)
+    localStorage.setItem("favorites", JSON.stringify(fakeAPIResults))
+  });
+
   it("should have a home page", () => {
     render(
       <MemoryRouter initialEntries={[ '/' ]}>
         <App />
       </MemoryRouter>
     );
+    
     const navHome = screen.getByRole('link', { name: /home/i })
     const navFav = screen.getByRole('link', { name: /favorites/i })
     const heading = screen.getByRole('heading', { name: /moodytunes/i })
     const prompt = screen.getByRole('heading', { name: /generate a list of songs that fit your mood\./i })
+    
     expect(prompt).toBeInTheDocument()
     expect(heading).toBeInTheDocument()
     expect(navHome).toBeInTheDocument()
     expect(navFav).toBeInTheDocument()
   });
 
-  it("Should have a favorites page", () => {
+  it("Should have a FavoritesView page with Favorite components", () => {
     render(
       <MemoryRouter initialEntries={[ '/favorites' ]} >
         <App />
@@ -37,6 +47,7 @@ describe("App", () => {
     );
     
     const favHeading = screen.getByRole('link', { name: /favorites/i })
+    
     expect(favHeading).toBeInTheDocument()
   });
 
@@ -67,4 +78,78 @@ describe("App", () => {
     const favHeading = screen.getByRole('heading', { name: /favorites view/i })
     expect(favHeading).toBeInTheDocument()
   });
+  
+  it("Should load results after picking a mood and year and submitting' ", async () => {
+    render(
+      <MemoryRouter initialEntries={[ '/' ]} >
+        <App />
+      </MemoryRouter>
+    );
+    
+    const mood6 = screen.getByText('Angry')
+    const the90s = screen.getByText("1990's");
+    const submitButton = screen.getByRole('button', { name: /get songs/i });
+
+    userEvent.click(mood6);
+    userEvent.click(the90s);
+    userEvent.click(submitButton);
+    
+    const moodHeader = await waitFor(() => screen.getByRole('heading', { name: /"angry" song results:/i }))
+    const songTitle1 = screen.getByRole('heading', { name: /what kind of love are you on/i })
+    const songTitle2 = screen.getByRole('heading', { name: /hot legs/i })
+    const songTitle3 = screen.getByRole('heading', { name: /trash/i })
+    const songTitle4 = screen.getByRole('heading', { name: /very ape/i })
+    
+    expect(moodHeader).toBeInTheDocument()
+    expect(songTitle1).toBeInTheDocument()
+    expect(songTitle2).toBeInTheDocument()
+    expect(songTitle3).toBeInTheDocument()
+    expect(songTitle4).toBeInTheDocument()
+  });
+
+  it("Should add to favorites after clicking favorite icon", async () => {
+    render(
+      <MemoryRouter initialEntries={[ '/' ]} >
+        <App />
+      </MemoryRouter>
+    );
+    
+    const mood6 = screen.getByText('Angry')
+    const the90s = screen.getByText("1990's");
+    const submitButton = screen.getByRole('button', { name: /get songs/i });
+
+    userEvent.click(mood6);
+    userEvent.click(the90s);
+    userEvent.click(submitButton);
+    
+    const moodHeader = await waitFor(() => screen.getByRole('heading', { name: /"angry" song results:/i }))
+    const favButton = screen.getAllByRole('button', { name: /⭐/i })
+    
+    userEvent.click(favButton[0])
+    expect(moodHeader).toBeInTheDocument()
+
+    const navFav = screen.getByRole('link', { name: /favorites/i })
+    userEvent.click(navFav)
+
+    const favHeading = screen.getByRole('heading', { name: /favorites view/i })
+    const songTitle1 = screen.getByRole('heading', { name: /what kind of love are you on/i })
+    expect(favHeading).toBeInTheDocument()
+    expect(songTitle1).toBeInTheDocument()
+  });
+  
+  it("Should remove favorite after clicking remove on Favorite component", async () => {
+    render(
+      <MemoryRouter initialEntries={[ '/favorites' ]} >
+        <App />
+      </MemoryRouter>
+    );
+    
+    const songTitle1 = screen.getByRole('heading', { name: /what kind of love are you on/i })
+    expect(songTitle1).toBeInTheDocument()
+
+    const removeBtn = screen.getAllByRole("button", { name: /remove/i });
+    userEvent.click(removeBtn[0]);
+    expect(songTitle1).not.toBeInTheDocument()
+  });
+  
 });

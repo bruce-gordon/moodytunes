@@ -1,8 +1,7 @@
 import "@testing-library/jest-dom";
-import { render, screen, waitFor } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { render, screen } from "@testing-library/react";
 import ResultsView from "./ResultsView";
-import {fakeSearchResults, fakeFavorites, testSong, testDuplicateSong} from '../common/testData'
+import {fakeSearchResults, fakeFavorites } from '../common/testData'
 
 
 describe("ResultsView", () => {

@@ -1,8 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import NavBar from "./NavBar";
 import "@testing-library/jest-dom";
-import userEvent from "@testing-library/user-event";
-import { MemoryRouter, BrowserRouter } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 
 describe("NavBar", () => {
   it("should render with buttons and heading", () => {

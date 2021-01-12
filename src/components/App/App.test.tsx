@@ -2,17 +2,14 @@ import {
   render,
   screen,
   waitFor,
-  waitForElementToBeRemoved,
 } from "@testing-library/react";
 import App from "./App";
 import "@testing-library/jest-dom";
 import { getTracksByMoodAPI } from "../../utilities/apiCalls";
 jest.mock('../../utilities/apiCalls', () => ({getTracksByMoodAPI: jest.fn()}));
-import { MemoryRouter, BrowserRouter } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
-import {fakeSearchResults, testSong, testDuplicateSong, fakeAPIResults, fakeFavorites2} from '../common/testData'
-import { TypeOfExpression } from "typescript";
-import { useState } from "react";
+import { fakeAPIResults} from '../common/testData'
 
 describe("App", () => {
   beforeEach(() => {
@@ -151,5 +148,5 @@ describe("App", () => {
     userEvent.click(removeBtn[0]);
     expect(songTitle1).not.toBeInTheDocument()
   });
-  
+
 });

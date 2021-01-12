@@ -101,14 +101,10 @@ const Result = ({
         </div>
         <div className="date-genre">
           <span className={`badge badge-${id}`}>
-            {/* <p> */}
-              <b>Release Date:</b> {releaseDate}
-            {/* </p> */}
+            <b>Release Date:</b> {releaseDate}
           </span>
           <span className={`badge badge-${id}`}>
-            {/* <p> */}
-              <b>Genre:</b> {genreTitle}
-            {/* </p> */}
+            <b>Genre:</b> {genreTitle}
           </span>
         </div>
       </div>

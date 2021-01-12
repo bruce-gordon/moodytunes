@@ -157,10 +157,10 @@ Pleasantly simple to implement! Search functionality is a twofold process. The `
 <img src="" alt=""
  width="150" height="auto" style="float: left" />
 
-[GitHub Profile]()
+[GitHub Profile](https://github.com/demaceo)
 
 <h4>Bruce Gordon</h4>
 <img src="" alt=""
  width="150" height="auto" style="float: left" />
 
-[GitHub Profile]()
+[GitHub Profile](https://github.com/bruce-gordon)

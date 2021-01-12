@@ -10,11 +10,12 @@ import { getTracksByMoodAPI } from "../../utilities/apiCalls";
 import { MemoryRouter, BrowserRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
 jest.mock("../../utilities/apiCalls");
+import {fakeSearchResults, testSong, testDuplicateSong} from '../common/testData'
 
 describe("App", () => {
   it("should have a home page", () => {
     render(
-      <MemoryRouter>
+      <MemoryRouter initialEntries={[ '/' ]}>
         <App />
       </MemoryRouter>
     );

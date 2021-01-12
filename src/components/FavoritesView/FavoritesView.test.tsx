@@ -2,7 +2,7 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import FavoritesView from "./FavoritesView";
-import {fakeSearchResults, testSong, testDuplicateSong} from '../common/testData'
+import {fakeSearchResults} from '../common/testData'
 
 describe("FavoritesView", () => {
   const mockRemoveFavorite = jest.fn();    

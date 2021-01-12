@@ -2,6 +2,7 @@
    display: flex;
   flex-direction: column;
   align-items: center;
+  color: rgb(253,235,103);
 }
 
 .favs-container {

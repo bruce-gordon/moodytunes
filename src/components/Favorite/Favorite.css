@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: solid 3px white;
+    border: solid 3px rgb(253,235,103);
     border-radius: 15px;
     padding: clamp(.8em, 2vh, 3em) clamp(1em, 2vw, 2em);
     transition: all 0.2s ease-in-out;
@@ -42,6 +42,7 @@
 .fav-title-artist {
   flex: 2;
   line-height: 1.2em;
+  color: rgb(253,235,103);
 }
 
 .fav-title-artist h1 {
@@ -57,16 +58,14 @@
 
 .fav-date-genre {
   display: flex;
-  /* padding: 0em clamp(1em, 2vw, 2em); */
   font-size: .5em;
 }
 
 .fav-date-genre .fav-badge {
-  border: solid 1.5px white;
+  border: solid 1.5px rgb(253,235,103);
   border-radius: 15px;
   padding: 0px 8px;
-  /* line-height: 0px; */
-  background-color: white;
+  background-color: rgb(253,235,103);
   color: rgb(40,44,52);
   font-size: 1.2em;
   font-weight: 300;

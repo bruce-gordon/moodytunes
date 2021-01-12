@@ -74,13 +74,13 @@ const handleMood = (moodNum: string, moodWord: string) => {
         <p className='form-subheader'>Please select a <b>Decade</b>:</p>
         <br/>
         <div className='form-options decades'>
-        <p className={ `icon ${getStylings(decade, 'date50')}` } onClick={ event => setDecade('date50')}>1950's</p><br/>
-        <p className={ `icon ${getStylings(decade, 'date60')}` } onClick={ event => setDecade('date60')}>1960's</p><br/>
-        <p className={ `icon ${getStylings(decade, 'date70')}` } onClick={ event => setDecade('date70')}>1970's</p><br/>
-        <p className={ `icon ${getStylings(decade, 'date80')}` } onClick={ event => setDecade('date80')}>1980's</p><br/>
-        <p className={ `icon ${getStylings(decade, 'date90')}` } onClick={ event => setDecade('date90')}>1990's</p><br/>
-        <p className={ `icon ${getStylings(decade, 'date00')}` } onClick={ event => setDecade('date00')}>2000's</p><br/>
-        <p className={ `icon ${getStylings(decade, 'date10')}` } onClick={ event => setDecade('date10')}>2010's</p><br/>
+        <p className={ `icon ${getStylings(decade, 'date50')}` } onClick={ event => setDecade('date50')}>1950s</p><br/>
+        <p className={ `icon ${getStylings(decade, 'date60')}` } onClick={ event => setDecade('date60')}>1960s</p><br/>
+        <p className={ `icon ${getStylings(decade, 'date70')}` } onClick={ event => setDecade('date70')}>1970s</p><br/>
+        <p className={ `icon ${getStylings(decade, 'date80')}` } onClick={ event => setDecade('date80')}>1980s</p><br/>
+        <p className={ `icon ${getStylings(decade, 'date90')}` } onClick={ event => setDecade('date90')}>1990s</p><br/>
+        <p className={ `icon ${getStylings(decade, 'date00')}` } onClick={ event => setDecade('date00')}>2000s</p><br/>
+        <p className={ `icon ${getStylings(decade, 'date10')}` } onClick={ event => setDecade('date10')}>2010s</p><br/>
         </div>
         <br/>
         <Link className='submit-link' to='/results'>

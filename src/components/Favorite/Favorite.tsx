@@ -15,16 +15,14 @@ const Favorite = ({
     removeFavorite(id);
   };
 
-  let songTitle = title
-    .split(" ")
-    .map(word => word.charAt(0).toUpperCase() + word.substring(1))
-    .join(" ");
-  
-  let genreTitle = genre
-    .split(" ")
-    .map(word => word.charAt(0).toUpperCase() + word.substring(1))
-    .join(" ");
-  
+  const capitalize = (songInfo: string) => {
+    return (
+      songInfo.split(" ")
+      .map(word => word.charAt(0).toUpperCase() + word.substring(1))
+      .join(" ")
+    );
+  }
+
   const searchSpotify = () => {
     let searchParams = `${title}  artist:${artist}`;
     window.open(`https://open.spotify.com/search/${searchParams}`);
@@ -34,15 +32,15 @@ const Favorite = ({
     <article className="favorite" id={id}>
       <div className="fav-details">
         <div className="fav-title-artist">
-          <h1>{songTitle}</h1>
-          <h3>{artist}</h3>
+          <h1>{capitalize(title)}</h1>
+          <h3>{capitalize(artist)}</h3>
         </div>
         <div className="fav-date-genre">
           <span className={`fav-badge`}>
             <b>Release Date:</b> {releaseDate}
           </span>
           <span className={`fav-badge`}>
-            <b>Genre:</b> {genreTitle}
+            <b>Genre:</b> {capitalize(genre)}
           </span>
         </div>
       </div>

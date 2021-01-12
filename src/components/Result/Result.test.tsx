@@ -49,7 +49,7 @@ describe("Result", () => {
     expect(mockAddFavorite).toHaveBeenCalledWith("4448");
   });
   
-  it("should not add duplicate songs", () => {
+  it("should not add duplicate songs to favorites", () => {
     const mockAddFavorite = jest.fn();
     render(
       <Result

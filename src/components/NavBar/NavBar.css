@@ -1,0 +1,197 @@
+.music-note {
+  display: flex;
+  flex-direction: row;
+  top: .9%;
+  position: absolute;
+  animation: linear initial alternate;
+  animation-name: run;
+  animation-duration: 2s;
+  width: 4em;
+  height: 4.2em;
+}
+
+#note-one{
+    right: 96vw;
+    animation: linear initial alternate;
+    animation-name: run;
+}
+#note-two{
+    right: 96vw;
+    animation: linear initial alternate;
+    animation-name: spill;
+}
+#note-three{
+    right: 96vw;
+    animation: linear initial alternate;
+    animation-name: spill-two;
+}
+#note-four{
+    right: 96vw;
+    animation: linear initial alternate;
+    animation-name: spill-three;
+}
+#note-five{
+    right: 96vw;
+    animation: linear initial alternate;
+    animation-name: spill-four;
+}
+#note-six{
+    right: 96vw;
+    animation: linear initial alternate;
+    animation-name: spill-five;
+}
+#note-seven{
+    right: 96vw;
+    animation: linear initial alternate;
+    animation-name: spill-six;
+}
+
+@keyframes run {
+    0% { 
+      right: 0%;
+      opacity: 0%
+    }
+    50%{ 
+      opacity: 10%;
+    }
+    100%{ 
+      right: 96%;
+      opacity: 90%;
+    }
+}
+@keyframes spill {
+    0% { 
+      right: -20%;
+      opacity: 0%
+    }
+    50%{ 
+      opacity: 10%;
+    }
+    100%{ 
+      right: 96%;
+      opacity: 90%;
+    }
+}
+@keyframes spill-two {
+    0% { 
+      right: -40%;
+      opacity: 0%
+    }
+    50%{ 
+      opacity: 10%;
+    }
+    100%{ 
+      right: 96%;
+      opacity: 90%;
+    }
+}
+@keyframes spill-three {
+    0% { 
+      right: -60%;
+      opacity: 0%
+    }
+    50%{ 
+      opacity: 10%;
+    }
+    100%{ 
+      right: 96%;
+      opacity: 90%;
+    }
+}
+@keyframes spill-four {
+    0% { 
+      right: -80%;
+      opacity: 0%
+    }
+    50%{ 
+      opacity: 10%;
+    }
+    100%{ 
+      right: 96%;
+      opacity: 90%;
+    }
+}
+@keyframes spill-five {
+    0% { 
+      right: -100%;
+      opacity: 0%
+    }
+    50%{ 
+      opacity: 10%;
+    }
+    100%{ 
+      right: 96%;
+      opacity: 90%;
+    }
+}
+@keyframes spill-six {
+    0% { 
+      right: -120%;
+      opacity: 0%
+    }
+    50%{ 
+      opacity: 10%;
+    }
+    100%{ 
+      right: 96%;
+      opacity: 90%;
+    }
+}
+
+nav {
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: -10vw;
+  z-index: 1;
+
+}
+
+.nav-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4vh;
+  font-size: .8em;
+  width: 100%;
+  border: 2px solid white;
+  border-radius: 10px;
+  transition: ease-in-out .2s;
+}
+
+.nav-btn-link {
+  color: white;
+  width: 45%;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.nav-btn:hover {
+  background: #e100a9;
+  color: #282c34;
+  border-color: #e100a9;
+}
+
+.app-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2vw 0;
+  border-bottom: 2px solid white;
+  background-color: #282c34;
+}
+
+.app-name {
+  font-size: 1.5em;
+  font-style: italic;
+  margin-left: -10vw;
+  z-index: 1;
+}
+
+.app-name-link {
+  text-decoration: none;
+  color: white;
+  z-index: 1;
+} 

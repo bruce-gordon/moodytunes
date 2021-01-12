@@ -72,4 +72,45 @@ describe("App", () => {
       "date70"
     );
   });
+
+  it("Submit button should be disabled initially", () => {
+    render(
+      <MemoryRouter>
+        <Form getMoodyTunes={mockGetMoodyTunes} updateMood={ mockUpdateMoodName } />
+      </MemoryRouter>
+    );
+
+    const submitButton = screen.getByRole('button', { name: /get songs/i });
+    const moodHeader = screen.getByText('Please select your :')
+
+    userEvent.click(submitButton);
+    
+    expect(moodHeader).toBeInTheDocument();
+  });
+  
+  it("Submit should be disabled until 'mood' is selected", () => {
+    render(
+      <MemoryRouter>
+        <Form getMoodyTunes={mockGetMoodyTunes} updateMood={ mockUpdateMoodName } />
+      </MemoryRouter>
+    );
+
+    const moodHeader = screen.getByText('Please select your :')
+    const mood1 = screen.getByText('Happy')
+    const the70s = screen.getByText("1970s");
+    const submitButton = screen.getByRole('button', { name: /get songs/i });
+
+    userEvent.click(submitButton);
+    
+    expect(moodHeader).toBeInTheDocument();
+    
+    userEvent.click(mood1);
+    userEvent.click(the70s);
+    userEvent.click(submitButton);
+
+    expect(mockGetMoodyTunes).toHaveBeenCalledWith(
+      "580000,950000",
+      "date70"
+    );
+  });
 });

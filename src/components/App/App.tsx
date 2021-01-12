@@ -5,24 +5,25 @@ import { Route, Switch } from "react-router-dom";
 import { getTracksByMoodAPI } from "../../utilities/apiCalls";
 import ResultsView from "../ResultsView/ResultsView";
 import FavoritesView from '../FavoritesView/FavoritesView'
-import {ISongResults, allGenres} from '../common/Types'
+import {ISongResults} from '../common/Types'
 import { useLocalStorage } from '../../utilities/useLocalStorage';
 import NavBar from '../NavBar/NavBar';
 
 function App() {
-  const [userName, setUserName] = useLocalStorage("userName", '');
   const [songResults, setSongResults] = useState([]);
   const [favoriteSongs, setFavoriteSongs] = useState<ISongResults[]>([]); // type the return for setFavoriteSongs for the error: Type 'undefined' is not assignable to type 'never'.ts(2322)
   const [localStorage, setLocalStorage] = useLocalStorage("favorites");
   const [moodName, setMoodName] = useState('');
+  
+  useEffect(() => {
+    let storedFavs: any = localStorage;
+    storedFavs = storedFavs ? storedFavs : [];
+    setFavoriteSongs(storedFavs);
+  }, []);
 
   const getMoodyTunes = async (mood: string, decade: string) => {
     const arousal: string = mood.split(",")[0];
     const valence: string = mood.split(",")[1];
-    // const excludedGenres: string = allGenres
-    //   .filter(musicGenre => genre !== musicGenre)
-    //   .join(",");
-    setSongResults([]);
     const results = await getTracksByMoodAPI(valence, arousal, decade);
     setSongResults(results);
   };
@@ -32,14 +33,7 @@ function App() {
   }
 
   const addFavorite = (id: string) => {
-    type AnyType = any;
-//     const favorite = songResults.find(
-//       (song: ISongResults) => song.id === id
-//     ) as AnyType; // favorite needs to be set to any???
-//     setFavoriteSongs([favorite, ...favoriteSongs]); // putting these params inside an array (error expected 1 arg but got 2+)
-//   };
-
-  const favorite = songResults.find((song:ISongResults) => song.id === id) as AnyType
+    const favorite = songResults.find((song:ISongResults) => song.id === id) as any
     if (favoriteSongs === undefined) {
       setFavoriteSongs([favorite]);
       setLocalStorage(favoriteSongs);
@@ -54,12 +48,6 @@ function App() {
     setFavoriteSongs(favorites);
     setLocalStorage(favorites);
   }
-
-  let storedFavs: any = localStorage;
-  useEffect(() => {
-    storedFavs = storedFavs ? storedFavs : [];
-    setFavoriteSongs(storedFavs);
-  }, []);
 
   const checkSongResults = () => {
     if (!songResults) {
@@ -86,7 +74,6 @@ function App() {
           <br/>
           One moment while your song results load...
           <br/>
-          {/* <br/> Please try again. */}
         </h2>
       )
     }

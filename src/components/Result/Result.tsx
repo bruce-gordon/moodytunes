@@ -39,13 +39,34 @@ const Result = ({
     });
 
     tl.to(`.${"--" + id}`, { duration: 0.1, translateY: 3 })
-    .to(`.${"--" + id}`, { duration: 0.3, rotateY: 360, translateY: -10 })
-    .to(`.${"--" + id}`, { duration: 0.3, translateY: 0 })
-    .to(`.${"--" + id}`, { duration: 0.2, filter: "grayscale(0%)", cursor: 'default' }, "-=.4")
-    .to(`.title-artist-${id}`, { duration: '0.2 !important', color: 'rgb(253,235,103)' }, "-=.4")
-    .to(`.badge-${id}`, { borderColor:'rgb(253,235,103)', backgroundColor: 'rgb(253,235,103)', color:'rgb(40,44,52)' }, "<")
-    .to(`.card-${id}`, { border: 'solid 3px rgb(253,235,103)' }, "<")
-    .to(`.${"--" + id}`, { ease:'none', duration: 8, repeat: -1, rotate: 360 });
+      .to(`.${"--" + id}`, { duration: 0.3, rotateY: 360, translateY: -10 })
+      .to(`.${"--" + id}`, { duration: 0.3, translateY: 0 })
+      .to(
+        `.${"--" + id}`,
+        { duration: 0.2, filter: "grayscale(0%)", cursor: "default" },
+        "-=.4"
+      )
+      .to(
+        `.title-artist-${id}`,
+        { duration: "0.2 !important", color: "rgb(253,235,103)" },
+        "-=.4"
+      )
+      .to(
+        `.badge-${id}`,
+        {
+          borderColor: "rgb(253,235,103)",
+          backgroundColor: "rgb(253,235,103)",
+          color: "rgb(40,44,52)",
+        },
+        "<"
+      )
+      .to(`.card-${id}`, { border: "solid 3px rgb(253,235,103)" }, "<")
+      .to(`.${"--" + id}`, {
+        ease: "none",
+        duration: 8,
+        repeat: -1,
+        rotate: 360,
+      });
     setInFavorites(true);
   };
 
@@ -78,28 +99,28 @@ const Result = ({
           <h1>{songTitle}</h1>
           <h3>{artist}</h3>
         </div>
-        <div className="button-container">
-          <button onClick={() => searchSpotify()} className="spotify-button">
-            {spotify}
-          </button>
-          <button
-            onClick={() => handleClick()}
-            className={`btn favoriteBtn --${id}`}>
-            ⭐
-          </button>
+        <div className="date-genre">
+          <span className={`badge badge-${id}`}>
+            {/* <p> */}
+              <b>Release Date:</b> {releaseDate}
+            {/* </p> */}
+          </span>
+          <span className={`badge badge-${id}`}>
+            {/* <p> */}
+              <b>Genre:</b> {genreTitle}
+            {/* </p> */}
+          </span>
         </div>
       </div>
-      <div className="date-genre">
-        <span className={`badge badge-${id}`}>
-          <p>
-            <b>Release Date:</b> {releaseDate}
-          </p>
-        </span>
-        <span className={`badge badge-${id}`}>
-          <p>
-            <b>Genre:</b> {genreTitle}
-          </p>
-        </span>
+      <div className="button-container">
+        <button onClick={() => searchSpotify()} className="spotify-button">
+          {spotify}
+        </button>
+        <button
+          onClick={() => handleClick()}
+          className={`btn favoriteBtn --${id}`}>
+          ⭐
+        </button>
       </div>
     </article>
   );

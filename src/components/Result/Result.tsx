@@ -86,7 +86,7 @@ const Result = ({
         </div>
       </div>
       <div className="button-container">
-        <button onClick={() => searchSpotify()} className="spotify-button">
+        <button onClick={() => searchSpotify()} className="spotify-button" data-testid='spotify'>
           {spotify}
         </button>
         <button

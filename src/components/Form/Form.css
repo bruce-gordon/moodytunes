@@ -1,6 +1,9 @@
 form {
   margin: 2em 2em;
   height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .icon {
@@ -11,7 +14,7 @@ form {
 }
 
 form h2 {
-  margin-bottom: 0px;
+  margin: 0px;
   font-style: italic;
   font-weight: lighter;
   text-align: center;
@@ -45,6 +48,7 @@ form h2 {
 
 .form-subheader {
   margin: 0 0 0 2vw;
+  align-self: start;
 }
 
 button a {
@@ -92,10 +96,10 @@ p svg {
 }
 
 .submit-button {
-  font-size: 1.8rem;
+  font-size: 1.3em;
   font-weight: bolder;
-  height: 2em;
-  width: 40%;
+  height: fit-content;
+  width: fit-content;
   background: #282c34;
   border: 2px solid #e100a9;
   border-radius: 10px;
@@ -116,7 +120,7 @@ p svg {
   transition: ease-in-out .2s;
   cursor: pointer;
   color: white;
-  padding: 0;
+  padding: .5em;
 }
 
 .submit-button:hover {

@@ -1,4 +1,3 @@
-
 .App {
   background-color: #282c34;
   min-height: 100vh;
@@ -8,78 +7,6 @@
   font-size: calc(10px + 2vmin);
   color: white;
   width: auto;
-}
-
-#music-note {
-  display: flex;
-  flex-direction: row;
-  /* position: relative; */
-  right: 96vw;
-  top: .9%;
-  position: absolute;
-  animation: linear initial alternate;
-  animation-name: run;
-  animation-duration: 4s;
-  width: 4em;
-  height: 4.2em;
-}
-
-@keyframes run {
-    0% { 
-      right: -10%;
-      opacity: 0%
-    }
-    50%{ 
-      opacity: 30%;
-    }
-    100%{ 
-      right: 96%;
-      opacity: 90%;
-    }
-}
-
-nav {
-  width: 25%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-right: -10vw;
-  z-index: 1;
-  
-}
-
-.nav-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 4vh;
-  width: 100%;
-  border: 2px solid white;
-  border-radius: 10px;
-  transition: ease-in-out .2s;
-}
-
-.nav-btn-link {
-  color: white;
-  width: 45%;
-  font-size: 2vh;
-  font-weight: bolder;
-  text-decoration: none;
-}
-
-.nav-btn:hover {
-  background: #e100a9;
-  color: #282c34;
-  border-color: #e100a9;
-}
-
-.app-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  padding: 2vw 0;
-  border-bottom: 2px solid white;
-  background-color: #282c34;
 }
 
 .app-name {

@@ -1,4 +1,4 @@
-import { Route, Switch, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { musicNote } from '../../utilities/icons';
 import './NavBar.css'; 
 
@@ -27,9 +27,9 @@ function NavBar() {
         { musicNote }
         </div>
         <Link to="/" className="app-name-link">
-            <h1 className="app-name">MoodyTunes</h1>
-          </Link>
-        <nav>
+          <h1>MoodyTunes</h1>
+        </Link>
+        <nav className='link-container'>
           <Link to="/" className="nav-btn-link">
             <div className="nav-btn">Home</div>
           </Link>

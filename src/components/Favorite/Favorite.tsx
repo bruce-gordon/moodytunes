@@ -48,7 +48,7 @@ const Favorite = ({
         <button onClick={() => handleClick()} className="remove-fav-btn">
           Remove
         </button>
-        <button onClick={() => searchSpotify()} className="spotify-button">
+        <button onClick={() => searchSpotify()} className="spotify-button" data-testid='spotify'>
           {spotify}
         </button>
       </div>

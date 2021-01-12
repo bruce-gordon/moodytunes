@@ -1,25 +1,34 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import FavoritesView from "./FavoritesView";
+import {fakeSearchResults} from '../common/testData'
 
 describe("FavoritesView", () => {
-  it("Should render Favorite component", () => {
-    const mockRemoveFavorite = jest.fn();    
+  const mockRemoveFavorite = jest.fn();    
+
+  it("Should render Favorite View header", () => {
     render(
       <FavoritesView
-        favoriteSongs={[{
-          id: '1',
-          artist_display_name: 'some artist',
-          title: 'some title',
-          releasedate: '1983',
-          genre: 'hip hop'
-        }]}
+        favoriteSongs={fakeSearchResults}
         removeFavorite={mockRemoveFavorite}
       />
     );
-    expect(screen.getByText("some artist")).toBeInTheDocument();
-    expect(screen.getByText("some title")).toBeInTheDocument();
-    expect(screen.getByText("1983")).toBeInTheDocument();
-    expect(screen.getByText("hip hop")).toBeInTheDocument();
+    const favoritesTitle = screen.getByRole('heading', { name: /favorites view/i })
+    
+    expect(favoritesTitle).toBeInTheDocument();
+  });
+
+  it("Should render Favorite component", () => {
+    render(
+      <FavoritesView
+        favoriteSongs={fakeSearchResults}
+        removeFavorite={mockRemoveFavorite}
+      />
+    );
+
+    expect(screen.getByText("John Lennon")).toBeInTheDocument();
+    expect(screen.getByText("Real Love")).toBeInTheDocument();
+    expect(screen.getAllByText("1988")[0]).toBeInTheDocument();
+    expect(screen.getAllByText("Pop")[0]).toBeInTheDocument();
   });
 });

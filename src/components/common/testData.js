@@ -1,3 +1,81 @@
+export const fakeAPIResults = [
+  {
+    id: "13828",
+    title: "What kind of love are you on",
+    artist_display_name: "Aerosmith",
+    artists: {
+      artist: {
+        mbid: "3d2b98e5-556f-4451-a3ff-c50ea18d57cb",
+        name: "Aerosmith",
+        genre: "soundtrack",
+      },
+    },
+    releasedate: "1998",
+    genre: "soundtrack",
+    arousal: "896000",
+    valence: "312791",
+    popularity: "60",
+    favorite: "0",
+  },
+  {
+    id: "7880",
+    title: "Hot legs",
+    artist_display_name: "Tom Jones & Tina Turner",
+    artists: {
+      artist: [
+        {
+          mbid: "57c6f649-6cde-48a7-8114-2a200247601a",
+          name: "Tom Jones",
+          genre: "pop",
+        },
+        { mbid: "9072df14-b61e-42e2-b4f4-6bbb7fdb5586", name: "Tina Turner" },
+      ],
+    },
+    releasedate: "1995",
+    genre: "pop",
+    arousal: "981990",
+    valence: "323407",
+    popularity: "85",
+    favorite: "0",
+  },
+  {
+    id: "50483",
+    title: "Very ape",
+    artist_display_name: "Nirvana",
+    artists: {
+      artist: {
+        mbid: "5b11f4ce-a62d-471e-81fc-a69a8278c7da",
+        name: "Nirvana",
+        genre: "rock",
+      },
+    },
+    releasedate: "1993",
+    genre: "rock",
+    arousal: "908000",
+    valence: "306792",
+    popularity: "60",
+    favorite: "0",
+  },
+  {
+    id: "74998",
+    title: "Trash",
+    artist_display_name: "Suede",
+    artists: {
+      artist: {
+        mbid: "52a7d70a-d8a0-4732-9a76-7719750e7f9d",
+        name: "Suede",
+        genre: "pop",
+      },
+    },
+    releasedate: "1996",
+    genre: "pop",
+    arousal: "896000",
+    valence: "206791",
+    popularity: "85",
+    favorite: "0",
+  },
+];
+
 export const fakeSearchResults = [
   {
     id: "6807",
@@ -70,7 +148,7 @@ export const fakeSearchResults = [
     valence: "845690",
     popularity: "60",
     favorite: "0",
-  }
+  },
 ];
 
 export const fakeFavorites = [
@@ -166,4 +244,4 @@ export const testDuplicateSong = {
   valence: "315791",
   popularity: "85",
   favorite: "0",
-}
+};

@@ -1,4 +1,4 @@
-import { Route, Switch, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { musicNote } from '../../utilities/icons';
 import './NavBar.css'; 
 

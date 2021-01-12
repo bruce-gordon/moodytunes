@@ -114,3 +114,13 @@ p svg {
 .submit-button:focus {
   outline: none;
 }
+
+.disabled-link {
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  text-decoration: none;
+  width: 94%;
+}

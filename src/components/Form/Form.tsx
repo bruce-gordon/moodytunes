@@ -24,6 +24,11 @@ const handleMood = (moodNum: string, moodWord: string) => {
   setMoodName(moodWord);
 }
 
+const disableLink = () => {
+  let className = mood ? 'submit-link' : 'disabled-link';
+  return className
+}
+
   return (
     <div className='form-view'>
       <form action="/action_page.php">
@@ -58,19 +63,7 @@ const handleMood = (moodNum: string, moodWord: string) => {
           </p>
         </div>
         <br/>
-        {/* <p className='form-subheader'>Please select a <b>Genre</b>:</p>
-        <br/>
-        <div className='form-options moods'>
-        <p className={ getStylings(genre, 'rock') } onClick={ event => setGenre('rock')}>Rock</p><br/>
-        <p className={ getStylings(genre, 'hip hop') } onClick={ event => setGenre('hip hop')}>Hip Hop</p><br/>
-        <p className={ getStylings(genre, 'jazz') } onClick={ event => setGenre('jazz')}>Jazz</p><br/>
-        <p className={ getStylings(genre, 'blues') } onClick={ event => setGenre('blues')}>Blues</p><br/>
-        <p className={ getStylings(genre, 'pop') } onClick={ event => setGenre('pop')}>Pop</p><br/>
-        <p className={ getStylings(genre, 'regae') } onClick={ event => setGenre('regae')}>Regae</p><br/>
-        <p className={ getStylings(genre, 'country') } onClick={ event => setGenre('country')}>Country</p><br/>
-        <p className={ getStylings(genre, 'folk') } onClick={ event => setGenre('folk')}>Folk</p><br/>
-        </div>
-        <br/> */}
+
         <p className='form-subheader'>Please select a <b>Decade</b>:</p>
         <br/>
         <div className='form-options decades'>
@@ -83,8 +76,12 @@ const handleMood = (moodNum: string, moodWord: string) => {
         <p className={ `icon ${getStylings(decade, 'date10')}` } onClick={ event => setDecade('date10')}>2010s</p><br/>
         </div>
         <br/>
-        <Link className='submit-link' to='/results'>
-          <button className='submit-button' onClick={ (event: React.MouseEvent<HTMLElement>) => handleClick(event as any) }>
+        <Link
+          className={disableLink()}
+          to='/results'>
+          <button
+            className='submit-button'
+            onClick={ (event: React.MouseEvent<HTMLElement>) => handleClick(event as any) }>
             Get Songs
           </button>
         </Link>

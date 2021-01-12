@@ -21,7 +21,9 @@ describe("Favorite", () => {
       />
     );
     const removeBtn = screen.getByRole("button", { name: /remove/i });
-
+    const spotifyBtn = screen.getByTestId('spotify')
+    
+    expect(spotifyBtn).toBeInTheDocument();
     expect(screen.getByText("John Lennon")).toBeInTheDocument();
     expect(screen.getByText("Real Love")).toBeInTheDocument();
     expect(screen.getByText("1988")).toBeInTheDocument();

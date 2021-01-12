@@ -8,7 +8,7 @@ form {
   transition: ease-in-out .2s;
 }
 .icon:hover {
-  background-color: orange;
+  background-color: #FF8367;
 }
 
 form h2 {
@@ -75,7 +75,7 @@ p svg {
 }
 
 .selected-choice {
-  background-color: orange;
+  background-color: #FF8367;
   color: #282c34;
   /* border: solid 1px orange; */
   padding: 9px;

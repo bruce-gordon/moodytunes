@@ -8,7 +8,7 @@ import FavoritesView from '../FavoritesView/FavoritesView'
 import {ISongResults, allGenres} from '../common/Types'
 import { useLocalStorage } from '../../utilities/useLocalStorage';
 import { musicNote } from '../../utilities/icons';
-
+import NavBar from "../NavBar/NavBar";
 
 function App() {
   const [userName, setUserName] = useLocalStorage("userName", '');
@@ -29,12 +29,6 @@ function App() {
 
   const addFavorite = (id: string) => {
     type AnyType = any;
-//     const favorite = songResults.find(
-//       (song: ISongResults) => song.id === id
-//     ) as AnyType; // favorite needs to be set to any???
-//     setFavoriteSongs([favorite, ...favoriteSongs]); // putting these params inside an array (error expected 1 arg but got 2+)
-//   };
-
   const favorite = songResults.find((song:ISongResults) => song.id === id) as AnyType
     if (favoriteSongs === undefined) {
       setFavoriteSongs([favorite]);
@@ -78,8 +72,6 @@ function App() {
         <h2>
           <br/>
           One moment while your song results load...
-          <br/>
-          {/* <br/> Please try again. */}
         </h2>
       )
     }
@@ -87,20 +79,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="app-header">
-        <div id = "music-note">
-          { musicNote }
-        </div>
-        <h1 className="app-name">MoodyTunes</h1>
-        <nav>
-          <Link to="/" className="nav-btn-link">
-            <div className="nav-btn">Home</div>
-          </Link>
-          <Link to='/favorites' className='nav-btn-link'>
-            <div className='nav-btn'>View Favorites</div>
-          </Link>
-        </nav>
-      </header>
+      <NavBar />
       <Switch>
         <Route
           path='/favorites'

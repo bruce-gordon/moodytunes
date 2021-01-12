@@ -96,17 +96,16 @@ p svg {
 }
 
 .submit-button {
-  font-size: 1.3em;
+  font-size: 1.8rem;
   font-weight: bolder;
-  height: fit-content;
-  width: fit-content;
-  background: #282c34;
-  border: 2px solid #e100a9;
-  border-radius: 10px;
+  height: 2em;
+  width: 40%;
+  background: #e100a9;
+  color: #282c34;
+  border-color: #e100a9;  border-radius: 10px;
   transition: ease-in-out .2s;
   cursor: pointer;
-  color:#e100a9;
-  padding: 0;
+  padding: .5em;
 }
 
 .submit-button-inactive {

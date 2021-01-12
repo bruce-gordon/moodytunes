@@ -14,7 +14,7 @@ form {
 }
 
 form h2 {
-  margin-bottom: 0px;
+  margin: 0px;
   font-style: italic;
   font-weight: lighter;
   text-align: center;
@@ -48,6 +48,7 @@ form h2 {
 
 .form-subheader {
   margin: 0 0 0 2vw;
+  align-self: start;
 }
 
 button a {

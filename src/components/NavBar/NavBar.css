@@ -8,6 +8,7 @@
   animation-duration: 2s;
   width: 4em;
   height: 4.2em;
+  opacity: 19%;
 }
 
 #note-one{
@@ -138,26 +139,27 @@
     }
 }
 
-nav {
-  width: 25%;
+.link-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-right: -10vw;
-  z-index: 1;
-
+  width:fit-content;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  /* margin-right: -10vw; */
+  /* z-index: 1; */
 }
 
 .nav-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 4vh;
-  font-size: .8em;
-  width: 100%;
-  border: 2px solid white;
+  flex:1;
+  padding: .2em .4em;
+  height: fit-content;
+  width: fit-content;
+  font-size: clamp(13px, 1em, 2em);
+  font-weight: 300;
+  border: 1.4px solid white;
   border-radius: 10px;
   transition: ease-in-out .2s;
+  margin: 0 .6em;
 }
 
 .nav-btn-link {
@@ -183,11 +185,13 @@ nav {
   background-color: #282c34;
 }
 
-.app-name {
-  font-size: 1.5em;
+.app-name-link h1 {
+  font-size: 2em;
   font-style: italic;
-  margin-left: -10vw;
-  z-index: 1;
+  font-weight: 300; 
+}
+
+.app-name {
 }
 
 .app-name-link {

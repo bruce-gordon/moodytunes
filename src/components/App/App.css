@@ -10,10 +10,10 @@
   width: auto;
 }
 
-#music-note {
+/* #music-note {
   display: flex;
   flex-direction: row;
-  /* position: relative; */
+  position: relative;
   right: 96vw;
   top: .9%;
   position: absolute;
@@ -22,9 +22,9 @@
   animation-duration: 4s;
   width: 4em;
   height: 4.2em;
-}
+} */
 
-@keyframes run {
+/* @keyframes run {
     0% { 
       right: -10%;
       opacity: 0%
@@ -80,7 +80,7 @@ nav {
   padding: 2vw 0;
   border-bottom: 2px solid white;
   background-color: #282c34;
-}
+} */
 
 .app-name {
   font-size: 1.5em;

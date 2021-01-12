@@ -102,6 +102,10 @@ h3 {
 .spotify-button:hover {
     transform: scale(1.1);
 }
+.spotify-button:focus {
+    transform: scale(1.1);
+    outline: none;
+}
 
 .spotify-button .spotify-svg path {
     fill: rgb(29,208,92);

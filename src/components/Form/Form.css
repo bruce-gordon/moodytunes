@@ -110,3 +110,7 @@ p svg {
   color: #282c34;
   border-color: #e100a9;
 }
+
+.submit-button:focus {
+  outline: none;
+}

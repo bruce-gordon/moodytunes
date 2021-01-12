@@ -1,7 +1,39 @@
+@media screen and (max-width: 1645px){
+    /* .music-note {
+        display: flex;
+        flex-direction: row;
+        top: .9%;
+        width: 4em;
+        height: 4.2em;
+    } */
+    #note-one{
+        display: none;
+}
+#note-two{
+  display: none;
+}
+#note-three{
+  display: none;
+}
+#note-four{
+  display: none;
+}
+#note-five{
+    display: none;
+}
+#note-six{
+   display: none;
+}
+#note-seven{
+  display: none;
+}
+}
+
+@media screen and (min-width: 1600px){
 .music-note {
   display: flex;
   flex-direction: row;
-  top: .9%;
+  top: .5vh;
   position: absolute;
   animation: linear initial alternate;
   animation-name: run;
@@ -136,6 +168,7 @@
       right: 96%;
       opacity: 90%;
     }
+}
 }
 
 nav {

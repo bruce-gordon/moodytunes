@@ -7,8 +7,8 @@
   animation-name: run;
   animation-duration: 2s;
   width: 4em;
-  height: 4.2em;
-  opacity: 19%;
+  height: 3.6em;
+  opacity: 45%;
 }
 
 #note-one{
@@ -177,10 +177,11 @@
 
 .app-header {
   width: 100%;
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 2vw 0;
+  padding: 1vw 0;
   border-bottom: 2px solid white;
   background-color: #282c34;
 }

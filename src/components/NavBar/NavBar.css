@@ -1,32 +1,25 @@
-@media screen and (max-width: 1645px){
-    /* .music-note {
-        display: flex;
-        flex-direction: row;
-        top: .9%;
-        width: 4em;
-        height: 4.2em;
-    } */
+@media screen and (max-width: 1601px) {
     #note-one{
         display: none;
-}
-#note-two{
-  display: none;
-}
-#note-three{
-  display: none;
-}
-#note-four{
-  display: none;
-}
-#note-five{
-    display: none;
-}
-#note-six{
-   display: none;
-}
-#note-seven{
-  display: none;
-}
+    }
+    #note-two{
+        display: none;
+    }
+    #note-three{
+        display: none;
+    }
+    #note-four{
+        display: none;
+    }
+    #note-five{
+        display: none;
+    }
+    #note-six{
+        display: none;
+    }
+    #note-seven{
+        display: none;
+    }
 }
 
 @media screen and (min-width: 1600px){
@@ -178,7 +171,6 @@ nav {
   align-items: center;
   margin-right: -10vw;
   z-index: 1;
-
 }
 
 .nav-btn {
@@ -207,7 +199,7 @@ nav {
 }
 
 .app-header {
-  width: 100%;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-around;

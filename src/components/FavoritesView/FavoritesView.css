@@ -17,6 +17,10 @@
   margin-right: 20vw;
 }
 
+.back-arrow svg path:hover {
+    fill: #e100a9;
+}
+
 .back-arrow svg {
   width: 2.5vw;
   transform: rotate(180deg);

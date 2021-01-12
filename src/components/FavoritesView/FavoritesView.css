@@ -1,8 +1,12 @@
 .favorites-view {
-   display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  color: rgb(253,235,103);
+  color: rgb(255, 255, 255);
+}
+
+.favorites-view h2 {
+  font-weight: 200;
 }
 
 .favs-container {

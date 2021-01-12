@@ -12,14 +12,22 @@
     min-width: fit-content;
 }
 
+.favorite:hover {
+  background: orange;
+  color: #364259;
+}
+
 .remove-fav-btn {
+  font-size: clamp(.5em, .75em, 1.2em);
+  font-weight: lighter;
   color: #282c34;
-  background: white;
-  height: 4vh;
-  border-radius: 5px;
-  border: 2px solid #282c34;
-  margin-right: .3vw;
-  font-weight: bolder;
+  background: none;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: ease-in .1s;
+  margin-bottom: .5vh;
+  height: 50%;
 }
 
 .remove-fav-btn:hover {
@@ -27,6 +35,7 @@
   background: #282c34;
   border: 2px solid white;
 }
+
 .remove-fav-btn:focus {
   outline: none
 }
@@ -75,28 +84,6 @@
 .fav-button-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex:.3;
-}
-
-.remove-fav-btn {
-  font-size: clamp(.5em, 1em, 1.2em);
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: ease-in .1s;
-  margin-bottom: 3px;
-  min-height: -webkit-fill-available;
-}
-
-.remove-fav-btn:focus {
-  outline: none
-}
-
-.remove-fav-btn:hover{
-
-}
-
-.favorite:hover {
-  background: orange;
-  color: #364259;
 }

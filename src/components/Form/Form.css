@@ -101,6 +101,20 @@ p svg {
   height: fit-content;
   width: fit-content;
   background: #282c34;
+  border: 2px solid #e100a9;
+  border-radius: 10px;
+  transition: ease-in-out .2s;
+  cursor: pointer;
+  color:#e100a9;
+  padding: 0;
+}
+
+.submit-button-inactive {
+  font-size: 1.8rem;
+  font-weight: bolder;
+  height: 2em;
+  width: 40%;
+  background: #282c34;
   border: 2px solid white;
   border-radius: 10px;
   transition: ease-in-out .2s;
@@ -117,4 +131,14 @@ p svg {
 
 .submit-button:focus {
   outline: none;
+}
+
+.disabled-link {
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  text-decoration: none;
+  width: 94%;
 }

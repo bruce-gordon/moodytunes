@@ -61,29 +61,27 @@ const Result = ({
     window.open(`https://open.spotify.com/search/${searchParams}`);
   };
 
-  let songTitle = title
-    .split(" ")
-    .map(word => word.charAt(0).toUpperCase() + word.substring(1))
-    .join(" ");
-
-  let genreTitle = genre
-    .split(" ")
-    .map(word => word.charAt(0).toUpperCase() + word.substring(1))
-    .join(" ");
+  const capitalize = (songInfo: string) => {
+    return (
+      songInfo.split(" ")
+      .map(word => word.charAt(0).toUpperCase() + word.substring(1))
+      .join(" ")
+    );
+  }
 
   return (
     <article className={`song-result card-${id}`} id={id}>
       <div className="song-details">
         <div className={`title-artist title-artist-${id}`}>
-          <h1>{songTitle}</h1>
-          <h3>{artist}</h3>
+          <h1>{capitalize(title)}</h1>
+          <h3>{capitalize(artist)}</h3>
         </div>
         <div className="date-genre">
           <span className={`badge badge-${id}`}>
             <b>Release Date:</b> {releaseDate}
           </span>
           <span className={`badge badge-${id}`}>
-            <b>Genre:</b> {genreTitle}
+            <b>Genre:</b> {capitalize(genre)}
           </span>
         </div>
       </div>

@@ -5,7 +5,8 @@ import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
-const router = <BrowserRouter basename='/moodytunes'><App /></BrowserRouter>
+const router = <BrowserRouter basename={process.env.PUBLIC_URL}><App /></BrowserRouter>
+// const router = <BrowserRouter basename='/moodytunes'><App /></BrowserRouter>
 
 ReactDOM.render(
   router,

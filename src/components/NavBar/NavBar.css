@@ -1,178 +1,6 @@
-@media screen and (max-width: 1601px) {
-    #note-one{
-        display: none;
-    }
-    #note-two{
-        display: none;
-    }
-    #note-three{
-        display: none;
-    }
-    #note-four{
-        display: none;
-    }
-    #note-five{
-        display: none;
-    }
-    #note-six{
-        display: none;
-    }
-    #note-seven{
-        display: none;
-    }
-}
-
-@media screen and (min-width: 1600px){
-.music-note {
-  display: flex;
-  flex-direction: row;
-  top: .5vh;
-  position: absolute;
-  animation: linear initial alternate;
-  animation-name: run;
-  animation-duration: 2s;
-  width: 4em;
-  height: 3.6em;
-  opacity: 100%;
-}
-
-#note-one{
-    right: 96vw;
-    animation: linear initial alternate;
-    animation-name: run;
-}
-#note-two{
-    right: 96vw;
-    animation: linear initial alternate;
-    animation-name: spill;
-}
-#note-three{
-    right: 96vw;
-    animation: linear initial alternate;
-    animation-name: spill-two;
-}
-#note-four{
-    right: 96vw;
-    animation: linear initial alternate;
-    animation-name: spill-three;
-}
-#note-five{
-    right: 96vw;
-    animation: linear initial alternate;
-    animation-name: spill-four;
-}
-#note-six{
-    right: 96vw;
-    animation: linear initial alternate;
-    animation-name: spill-five;
-}
-#note-seven{
-    right: 96vw;
-    animation: linear initial alternate;
-    animation-name: spill-six;
-}
-
-@keyframes run {
-    0% { 
-      right: 0%;
-      opacity: 0%
-    }
-    50%{ 
-      opacity: 10%;
-    }
-    100%{ 
-      right: 96%;
-      opacity: 90%;
-    }
-}
-@keyframes spill {
-    0% { 
-      right: -20%;
-      opacity: 0%
-    }
-    50%{ 
-      opacity: 10%;
-    }
-    100%{ 
-      right: 96%;
-      opacity: 90%;
-    }
-}
-@keyframes spill-two {
-    0% { 
-      right: -40%;
-      opacity: 0%
-    }
-    50%{ 
-      opacity: 10%;
-    }
-    100%{ 
-      right: 96%;
-      opacity: 90%;
-    }
-}
-@keyframes spill-three {
-    0% { 
-      right: -60%;
-      opacity: 0%
-    }
-    50%{ 
-      opacity: 10%;
-    }
-    100%{ 
-      right: 96%;
-      opacity: 90%;
-    }
-}
-@keyframes spill-four {
-    0% { 
-      right: -80%;
-      opacity: 0%
-    }
-    50%{ 
-      opacity: 10%;
-    }
-    100%{ 
-      right: 96%;
-      opacity: 90%;
-    }
-}
-@keyframes spill-five {
-    0% { 
-      right: -100%;
-      opacity: 0%
-    }
-    50%{ 
-      opacity: 10%;
-    }
-    100%{ 
-      right: 96%;
-      opacity: 90%;
-    }
-}
-@keyframes spill-six {
-    0% { 
-      right: -120%;
-      opacity: 0%
-    }
-    50%{ 
-      opacity: 10%;
-    }
-    100%{ 
-      right: 96%;
-      opacity: 90%;
-    }
-}
-}
-
 .link-container {
   display: flex;
   width:fit-content;
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* align-items: center; */
-  /* margin-right: -10vw; */
-  /* z-index: 1; */
 }
 
 .nav-btn {
@@ -215,7 +43,7 @@
 .app-name-link h1 {
   font-size: 2em;
   font-style: italic;
-  font-weight: 300; 
+  font-weight: 300;
 }
 
 .app-name {
@@ -225,4 +53,4 @@
   text-decoration: none;
   color: white;
   z-index: 1;
-} 
+}

@@ -11,10 +11,10 @@ import NavBar from '../NavBar/NavBar';
 
 function App() {
   const [songResults, setSongResults] = useState([]);
-  const [favoriteSongs, setFavoriteSongs] = useState<ISongResults[]>([]); // type the return for setFavoriteSongs for the error: Type 'undefined' is not assignable to type 'never'.ts(2322)
+  const [favoriteSongs, setFavoriteSongs] = useState<ISongResults[]>([]);
   const [localStorage, setLocalStorage] = useLocalStorage("favorites");
   const [moodName, setMoodName] = useState('');
-  
+
   useEffect(() => {
     let storedFavs: any = localStorage;
     storedFavs = storedFavs ? storedFavs : [];
@@ -30,6 +30,10 @@ function App() {
 
   const updateMoodName = (moodWord: string) => {
     setMoodName(moodWord);
+  }
+
+  const clearMoodName = () => {
+    setMoodName('');
   }
 
   const addFavorite = (id: string) => {
@@ -81,7 +85,9 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
+      <NavBar
+        clearMoodName ={ clearMoodName }
+      />
       <Switch>
         <Route
           path='/favorites'

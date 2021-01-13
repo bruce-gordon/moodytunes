@@ -22,11 +22,11 @@
     }
 }
 
-@media screen and (min-width: 1600px){
 .music-note {
   display: flex;
   flex-direction: row;
   top: .5vh;
+  left: 4.2em;
   position: absolute;
   animation: linear initial alternate;
   animation-name: run;
@@ -34,135 +34,6 @@
   width: 4em;
   height: 3.6em;
   opacity: 100%;
-}
-
-#note-one{
-    right: 96vw;
-    animation: linear initial alternate;
-    animation-name: run;
-}
-#note-two{
-    right: 96vw;
-    animation: linear initial alternate;
-    animation-name: spill;
-}
-#note-three{
-    right: 96vw;
-    animation: linear initial alternate;
-    animation-name: spill-two;
-}
-#note-four{
-    right: 96vw;
-    animation: linear initial alternate;
-    animation-name: spill-three;
-}
-#note-five{
-    right: 96vw;
-    animation: linear initial alternate;
-    animation-name: spill-four;
-}
-#note-six{
-    right: 96vw;
-    animation: linear initial alternate;
-    animation-name: spill-five;
-}
-#note-seven{
-    right: 96vw;
-    animation: linear initial alternate;
-    animation-name: spill-six;
-}
-
-@keyframes run {
-    0% { 
-      right: 0%;
-      opacity: 0%
-    }
-    50%{ 
-      opacity: 10%;
-    }
-    100%{ 
-      right: 96%;
-      opacity: 90%;
-    }
-}
-@keyframes spill {
-    0% { 
-      right: -20%;
-      opacity: 0%
-    }
-    50%{ 
-      opacity: 10%;
-    }
-    100%{ 
-      right: 96%;
-      opacity: 90%;
-    }
-}
-@keyframes spill-two {
-    0% { 
-      right: -40%;
-      opacity: 0%
-    }
-    50%{ 
-      opacity: 10%;
-    }
-    100%{ 
-      right: 96%;
-      opacity: 90%;
-    }
-}
-@keyframes spill-three {
-    0% { 
-      right: -60%;
-      opacity: 0%
-    }
-    50%{ 
-      opacity: 10%;
-    }
-    100%{ 
-      right: 96%;
-      opacity: 90%;
-    }
-}
-@keyframes spill-four {
-    0% { 
-      right: -80%;
-      opacity: 0%
-    }
-    50%{ 
-      opacity: 10%;
-    }
-    100%{ 
-      right: 96%;
-      opacity: 90%;
-    }
-}
-@keyframes spill-five {
-    0% { 
-      right: -100%;
-      opacity: 0%
-    }
-    50%{ 
-      opacity: 10%;
-    }
-    100%{ 
-      right: 96%;
-      opacity: 90%;
-    }
-}
-@keyframes spill-six {
-    0% { 
-      right: -120%;
-      opacity: 0%
-    }
-    50%{ 
-      opacity: 10%;
-    }
-    100%{ 
-      right: 96%;
-      opacity: 90%;
-    }
-}
 }
 
 .link-container {

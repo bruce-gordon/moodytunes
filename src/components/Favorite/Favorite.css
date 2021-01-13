@@ -1,22 +1,17 @@
 
 .favorite {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border: solid 3px rgb(253,235,103);
-    border-radius: 15px;
-    padding: clamp(.8em, 2vh, 3em) clamp(1em, 2vw, 2em);
-    transition: all 0.2s ease-in-out;
-    margin-bottom: 1em;
-    width: clamp(15em, 60vw, 55em);
-    min-width: fit-content;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: solid 3px rgb(253,235,103);
+  border-radius: 15px;
+  padding: clamp(.8em, 2vh, 3em) clamp(1em, 2vw, 2em);
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 1em;
+  width: clamp(15em, 60vw, 55em);
+  min-width: fit-content;
 }
-
-/* .favorite:hover {
-  background: orange;
-  color: #364259;
-} */
 
 .remove-fav-btn {
   font-size: clamp(.5em, .75em, 1.2em);

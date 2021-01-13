@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import Favorite from '../Favorite/Favorite';
 import './FavoritesView.css';
-import { arrow } from '../../utilities/icons'; 
+import { arrow } from '../../utilities/icons';
 import { Link } from "react-router-dom";
 
 
@@ -21,7 +21,7 @@ const FavoritesView = ({favoriteSongs, removeFavorite}: FavoritesViewProps) => {
   useEffect(() => {
     document.title = `MoodyTunes - Favorites (${favoriteSongs.length})`
   }, [])
-  
+
   if (favoriteSongs.length === 0) {
       return (
     <section className='no-favorites'>
@@ -53,14 +53,14 @@ const FavoritesView = ({favoriteSongs, removeFavorite}: FavoritesViewProps) => {
     <section className='favorites-view'>
         <header className='favorites-header'>
           <Link to='/results' className='back-arrow'>{ arrow }</Link>
-          <h2>Favorites View</h2>
+          <h2 className='fav-view-title'>Favorites View</h2>
         </header>
       <article className='favs-container'>
         { favorites }
       </article>
     </section>
    );
-  } 
+  }
 }
 
 export default FavoritesView;

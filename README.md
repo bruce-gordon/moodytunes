@@ -153,14 +153,14 @@ Pleasantly simple to implement! Search functionality is a twofold process. The `
 
 [GitHub Profile](https://github.com/brabbuss)
 
-<h4>Demaceo Vincent</h4>
-<img src="" alt=""
+<h4>Demaceo Vincent Howard</h4>
+<img src="https://avatars2.githubusercontent.com/u/62954974?s=400&u=b246587c21877b7fe4a4972e89ec98677d5c29d6&v=4" alt="Demaceo Vincent Howard"
  width="150" height="auto" style="float: left" />
 
 [GitHub Profile](https://github.com/demaceo)
 
 <h4>Bruce Gordon</h4>
-<img src="file:///Users/wolf/Desktop/IMG_9658%202.jpg" alt="Bruce Gordon"
+<img src="https://avatars3.githubusercontent.com/u/68293135?s=400&u=775c1b148ea65fa5bdcbbb6dab936da52cd44959&v=4" alt="Bruce Gordon"
  width="150" height="auto" style="float: left" />
 
 [GitHub Profile](https://github.com/bruce-gordon)

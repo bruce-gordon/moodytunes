@@ -1,27 +1,3 @@
-@media screen and (max-width: 1601px) {
-    #note-one{
-        display: none;
-    }
-    #note-two{
-        display: none;
-    }
-    #note-three{
-        display: none;
-    }
-    #note-four{
-        display: none;
-    }
-    #note-five{
-        display: none;
-    }
-    #note-six{
-        display: none;
-    }
-    #note-seven{
-        display: none;
-    }
-}
-
 .music-note {
   display: flex;
   flex-direction: row;
@@ -81,7 +57,7 @@
 .app-name-link h1 {
   font-size: 2em;
   font-style: italic;
-  font-weight: 300; 
+  font-weight: 300;
 }
 
 .app-name {
@@ -91,4 +67,4 @@
   text-decoration: none;
   color: white;
   z-index: 1;
-} 
+}

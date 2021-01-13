@@ -18,8 +18,8 @@
   font-weight: lighter;
   color: white;
   background: none;
-  border: 2px solid white;
-  border-radius: 15px;
+  border: 1px solid white;
+  border-radius: 10px;
   cursor: pointer;
   transition: ease-in .1s;
   margin-bottom: .5vh;
@@ -29,9 +29,9 @@
 
 .remove-fav-btn:hover {
   color: #282c34;
-  background: white;
-  border: 2px solid white;
-  transform: scale(1.1, 1.1);
+  background: #e100a9;
+  border: none;
+  /* transform: scale(1.1, 1.1); */
 }
 
 .remove-fav-btn:focus {
@@ -59,8 +59,8 @@
 
 .fav-title-artist h3 {
   font-weight:300;
-  margin: 0;
-  font-size: .6em;
+  margin: .25vh 0 .35vh 0;
+  font-size: .8em;
 }
 
 .fav-date-genre {
@@ -74,9 +74,10 @@
   padding: 0px 8px;
   background-color: white;
   color: rgb(40,44,52);
-  font-size: 1.2em;
+  font-size: .85vw;
   font-weight: 300;
   margin-right: 1em;
+  padding: .25vw .75vw;
 }
 
 .spotify-button {

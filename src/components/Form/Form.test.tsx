@@ -19,19 +19,19 @@ describe("App", () => {
     );
     const moodHeader = screen.getByText('Please select your :')
     const mood1 = screen.getByText('Happy')
-    const mood2 = screen.getByText("Sad");
+    const mood2 = screen.getByText("Sad"); 
     const mood3 = screen.getByText("Chill");
     const mood4 = screen.getByText("Amorous");
     const mood5 = screen.getByText("Excited");
     const mood6 = screen.getByText("Angry");
     const decadeHeader = screen.getByText('Please select a :')
-    const the50s = screen.getByText("1950's");
-    const the60s = screen.getByText("1960's");
-    const the70s = screen.getByText("1970's");
-    const the80s = screen.getByText("1980's");
-    const the90s = screen.getByText("1990's");
-    const the00s = screen.getByText("2000's");
-    const the10s = screen.getByText("2010's");
+    const the50s = screen.getByText("1950s");
+    const the60s = screen.getByText("1960s");
+    const the70s = screen.getByText("1970s");
+    const the80s = screen.getByText("1980s");
+    const the90s = screen.getByText("1990s");
+    const the00s = screen.getByText("2000s");
+    const the10s = screen.getByText("2010s");
     const submitButton = screen.getByRole('button', { name: /get songs/i });
 
     expect(moodHeader).toBeInTheDocument();
@@ -60,9 +60,50 @@ describe("App", () => {
     );
 
     const mood1 = screen.getByText('Happy')
-    const the70s = screen.getByText("1970's");
+    const the70s = screen.getByText("1970s");
     const submitButton = screen.getByRole('button', { name: /get songs/i });
 
+    userEvent.click(mood1);
+    userEvent.click(the70s);
+    userEvent.click(submitButton);
+
+    expect(mockGetMoodyTunes).toHaveBeenCalledWith(
+      "580000,950000",
+      "date70"
+    );
+  });
+
+  it("Submit button should be disabled initially", () => {
+    render(
+      <MemoryRouter>
+        <Form getMoodyTunes={mockGetMoodyTunes} updateMood={ mockUpdateMoodName } />
+      </MemoryRouter>
+    );
+
+    const submitButton = screen.getByRole('button', { name: /get songs/i });
+    const moodHeader = screen.getByText('Please select your :')
+
+    userEvent.click(submitButton);
+    
+    expect(moodHeader).toBeInTheDocument();
+  });
+  
+  it("Submit should be disabled until 'mood' is selected", () => {
+    render(
+      <MemoryRouter>
+        <Form getMoodyTunes={mockGetMoodyTunes} updateMood={ mockUpdateMoodName } />
+      </MemoryRouter>
+    );
+
+    const moodHeader = screen.getByText('Please select your :')
+    const mood1 = screen.getByText('Happy')
+    const the70s = screen.getByText("1970s");
+    const submitButton = screen.getByRole('button', { name: /get songs/i });
+
+    userEvent.click(submitButton);
+    
+    expect(moodHeader).toBeInTheDocument();
+    
     userEvent.click(mood1);
     userEvent.click(the70s);
     userEvent.click(submitButton);

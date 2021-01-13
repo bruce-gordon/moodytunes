@@ -1,3 +1,17 @@
+.music-note {
+  display: flex;
+  flex-direction: row;
+  top: .5vh;
+  left: 4.2em;
+  position: absolute;
+  animation: linear initial alternate;
+  animation-name: run;
+  animation-duration: 2s;
+  width: 4em;
+  height: 3.6em;
+  opacity: 100%;
+}
+
 .link-container {
   display: flex;
   width:fit-content;

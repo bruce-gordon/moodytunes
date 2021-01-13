@@ -84,7 +84,7 @@ describe("App", () => {
     );
     
     const mood6 = screen.getByText('Angry')
-    const the90s = screen.getByText("1990's");
+    const the90s = screen.getByText("1990s");
     const submitButton = screen.getByRole('button', { name: /get songs/i });
 
     userEvent.click(mood6);
@@ -112,7 +112,7 @@ describe("App", () => {
     );
     
     const mood6 = screen.getByText('Angry')
-    const the90s = screen.getByText("1990's");
+    const the90s = screen.getByText("1990s");
     const submitButton = screen.getByRole('button', { name: /get songs/i });
 
     userEvent.click(mood6);
@@ -178,7 +178,7 @@ describe("App", () => {
     );
     
     const mood6 = screen.getByText('Angry')
-    const the90s = screen.getByText("1990's");
+    const the90s = screen.getByText("1990s");
     const submitButton = screen.getByRole('button', { name: /get songs/i });
     userEvent.click(mood6);
     userEvent.click(the90s);

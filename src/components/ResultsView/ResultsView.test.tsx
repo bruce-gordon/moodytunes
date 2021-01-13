@@ -13,7 +13,7 @@ describe("ResultsView", () => {
         songResults={fakeSearchResults}
         addFavorite={mockAddFavorite}
         moodName={ 'Content' }
-        favoriteSongs={ fakeFavorites }
+        favoriteSongs={ fakeFavorites } 
       />
     );
     const mood = screen.getByRole('heading', { name: /"content" song results:/i })

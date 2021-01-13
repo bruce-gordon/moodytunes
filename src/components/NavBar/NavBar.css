@@ -168,11 +168,6 @@
 .link-container {
   display: flex;
   width:fit-content;
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* align-items: center; */
-  /* margin-right: -10vw; */
-  /* z-index: 1; */
 }
 
 .nav-btn {

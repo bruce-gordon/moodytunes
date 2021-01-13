@@ -1,6 +1,9 @@
 .results-view {
-  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.results-header {
+  font-weight: 200;
 }

@@ -37,7 +37,7 @@ const showActive = () => {
   return (
     <div className='form-view'>
       <form action="/action_page.php">
-        <h2>Generate a list of songs that fit your mood.</h2>
+        <h2>Generate a list of songs that fit your mood</h2>
         <br/>
         <p className='form-subheader'>Please select your <b>Mood</b>:</p>
         <br/>

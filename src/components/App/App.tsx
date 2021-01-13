@@ -74,11 +74,15 @@ function App() {
       )
     } else if (!songResults.length) {
       return (
-        <h2>
+        <div className='please-wait'>
+          <h2 className='please-wait-header'>
+            Please wait while your songs load,
+          </h2>
           <br/>
-          One moment while your song results load...
-          <br/>
-        </h2>
+          <h2 className='please-wait-header'>
+            or click "Home" to start a new search.
+          </h2>
+        </div>
       )
     }
   }

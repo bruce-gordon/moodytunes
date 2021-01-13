@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Result from "../Result/Result";
 import {ResultsViewProps} from '../common/Types'
+import './ResultsView.css';
 
 const ResultsView = ({ addFavorite, songResults, favoriteSongs, moodName }: ResultsViewProps) => {
   useEffect(() => {
@@ -23,8 +24,8 @@ const ResultsView = ({ addFavorite, songResults, favoriteSongs, moodName }: Resu
   });
   return (
     <section className="results-view">
-      <h2 className="container-title">
-        "{moodName}" song results:
+      <h2 className="results-header">
+        "{moodName}" song results
       </h2>
       {songs}
     </section>
